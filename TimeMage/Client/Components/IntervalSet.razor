@@ -1,0 +1,29 @@
+﻿
+<br/>
+
+<div>
+    <input type="button" class="btn btn-outline-secondary" @onclick="AddNewInterval" value="Add"/>
+</div>
+
+@if (Intervals.Any())
+{
+    <h2>Interval Count: @Intervals.Count</h2>
+    foreach(Interval interval in Intervals)
+    {
+        <Interval Name="@interval.Name" TimeString="@interval.TimeString"></Interval>
+    }
+}
+else
+{
+    <div>There are no Intervals</div>
+}
+
+@code {
+    public string SetName { get; set; }
+    List<Interval> Intervals { get; set; } = new List<Interval>();
+
+    public void AddNewInterval()
+    {
+        Intervals.Add(new Interval());
+    }
+}

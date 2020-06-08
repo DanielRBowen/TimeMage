@@ -1,0 +1,28 @@
+﻿<div class="row col-12">
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <button class="btn btn-outline-secondary" type="button">Duplicate</button>
+            <button class="btn btn-outline-danger" type="button">Delete</button>
+        </div>
+        <input type="text" class="form-control" aria-label="Interval Name" @bind-value="Name" placeholder="Name">
+        <input type="text" class="form-control" aria-label="Interval Time" @bind-value="TimeSpan">
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public string Name { get; set; } = "Mountain Climbers";
+    [Parameter]
+    public string TimeString { get; set; }
+    public DateTime DateTime { get; set; }
+    public TimeSpan TimeSpan { get; set; } = new TimeSpan(0, 0, 10);
+
+    public TimeSpan Time
+    {
+        get
+        {
+            bool isValid = TimeSpan.TryParse(TimeString, out TimeSpan timespan);
+            return isValid ? timespan : new TimeSpan(0, 0, 10);
+        }
+    }
+}

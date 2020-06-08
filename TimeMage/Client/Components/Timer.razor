@@ -1,0 +1,79 @@
+﻿@using System.Diagnostics;
+<div class="row col-12">
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="oi oi-document" aria-hidden="true"></span>
+            <span class="oi oi-trash" aria-hidden="true"></span>
+        </div>
+        <input type="text" class="form-control" aria-label="Name" @bind-value="Name" placeholder="Name">
+        @if (_timerRunning)
+        {
+            <div>@_timeLeft</div>
+        }
+        else
+        {
+            <input type="text" class="form-control" aria-label="Time" @bind-value="Time">
+        }
+        <div class="input-group-append">
+            @if (_timerRunning)
+            {
+                <span class="oi oi-media-stop" aria-hidden="true" @onclick="StopTimer"></span>
+            }
+            else
+            {
+                <span class="oi oi-media-play" aria-hidden="true" @onclick="StartTimer"></span>
+            }
+        </div>
+    </div>
+</div>
+
+@code {
+    private bool _timerRunning = false;
+    public string Name { get; set; } = "Timer";
+    public TimeSpan Time { get; set; } = new TimeSpan(0, 5, 0);
+    private TimeSpan _timeLeft = new TimeSpan(0, 0, 15);
+
+    public void StartTimer()
+    {
+        Task.Run(() => RunTimer());
+    }
+
+    async Task RunTimer()
+    {
+        if (Time.TotalSeconds <= 0)
+        {
+            return;
+        }
+
+        _timeLeft = Time;
+        _timerRunning = true;
+        while (_timeLeft > new TimeSpan() && _timerRunning == true)
+        {
+            await Task.Delay(1000);
+            _timeLeft = _timeLeft.Subtract(new TimeSpan(0, 0, 1));
+            StateHasChanged();
+        }
+        await AfterTime();
+        StateHasChanged();
+    }
+
+    public void StopTimer()
+    {
+        _timerRunning = false;
+    }
+
+    Task AfterTime()
+    {
+        if (_timerRunning)
+        {
+            _timerRunning = false;
+            // play sound;
+        }
+        else
+        {
+
+        }
+
+        return Task.CompletedTask;
+    }
+}

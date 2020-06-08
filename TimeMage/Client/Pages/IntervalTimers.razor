@@ -1,0 +1,20 @@
+﻿@page "/intervaltimers"
+
+<h1>Interval Timers</h1>
+
+@if (IntervalSets.Any())
+{
+    @foreach (IntervalSet intervalSet in IntervalSets)
+    {
+        <div>@intervalSet.SetName</div>
+    }
+}
+else
+{
+    <div>There are no Interval sets</div>
+}
+
+
+@code {
+    public List<IntervalSet> IntervalSets { get; set; } = new List<IntervalSet>();
+}

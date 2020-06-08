@@ -1,0 +1,26 @@
+﻿@page "/stopwatchpage"
+<!--https://medium.com/@@hutohoto/blazor-building-a-timer-and-a-stopwatch-5aea682147aa-->
+<p><button type="button" @onclick="async () => { await TmStopWatch(); }">Start</button></p>
+<p><button type="button" @onclick="() => { is_stopwatchrunning = false; }">Pause</button></p>
+<p><button type="button" @onclick="async () => { await TmStopWatch(); }">Resume</button></p>
+<p><button type="button" @onclick="() => { is_stopwatchrunning = false; stopwatchvalue = new TimeSpan(); }">Stop</button></p>
+<p>@stopwatchvalue</p>
+
+@code {
+    TimeSpan stopwatchvalue = new TimeSpan();
+    bool is_stopwatchrunning = false;
+
+    async Task TmStopWatch()
+    {
+        is_stopwatchrunning = true;
+        while (is_stopwatchrunning)
+        {
+            await Task.Delay(1000);
+            if (is_stopwatchrunning)
+            {
+                stopwatchvalue = stopwatchvalue.Add(new TimeSpan(0, 0, 1));
+                StateHasChanged();
+            }
+        }
+    }
+}
