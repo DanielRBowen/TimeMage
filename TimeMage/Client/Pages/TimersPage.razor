@@ -1,15 +1,15 @@
-﻿@page "/timers"
+﻿@page "/timerspage"
 
 <button type="button" @onclick="Add"><span class="oi oi-plus" aria-hidden="true"></span></button>
 
 
 @if (TimerList.Any())
 {
-    foreach (Timer timer in TimerList)
+    foreach (TimerItem timer in TimerList)
     {
         <table>
             <tbody>
-                <Timer Name="@timer.Name" Time="@timer.Time" DuplicateCallback="Duplicate" DeleteCallback="Delete"></Timer>
+                <TimerItem Name="@timer.Name" Time="@timer.Time" DuplicateCallback="Duplicate" DeleteCallback="Delete"></TimerItem>
             </tbody>
         </table>
     }
@@ -20,21 +20,21 @@ else
 }
 
 @code {
-    public List<Timer> TimerList { get; set; } = new List<Timer>();
+    public List<TimerItem> TimerList { get; set; } = new List<TimerItem>();
 
     public void Add()
     {
-        TimerList.Add(new Timer());
+        TimerList.Add(new TimerItem());
         StateHasChanged();
     }
 
-    public void Delete(Timer timerToDelete)
+    public void Delete(TimerItem timerToDelete)
     {
         TimerList.Remove(timerToDelete);
         StateHasChanged();
     }
 
-    public void Duplicate(Timer timerToDuplicate)
+    public void Duplicate(TimerItem timerToDuplicate)
     {
         TimerList.Add(timerToDuplicate);
         StateHasChanged();

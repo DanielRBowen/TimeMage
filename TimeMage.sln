@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30128.74
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeMage.Server", "TimeMage\Server\TimeMage.Server.csproj", "{C18523FC-B333-41B4-A238-BD9B7F5A443B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeMage.Server", "TimeMage\Server\TimeMage.Server.csproj", "{C18523FC-B333-41B4-A238-BD9B7F5A443B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeMage.Client", "TimeMage\Client\TimeMage.Client.csproj", "{4C6E1259-398E-4E9E-9F4E-E898A7DBE47C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeMage.Client", "TimeMage\Client\TimeMage.Client.csproj", "{4C6E1259-398E-4E9E-9F4E-E898A7DBE47C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeMage.Shared", "TimeMage\Shared\TimeMage.Shared.csproj", "{8B6ABB03-AC05-41EB-89F6-5C33A3F5A0EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeMage.Shared", "TimeMage\Shared\TimeMage.Shared.csproj", "{8B6ABB03-AC05-41EB-89F6-5C33A3F5A0EA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,14 +1,14 @@
 ﻿
-<br/>
+<br />
 
 <div>
-    <input type="button" class="btn btn-outline-secondary" @onclick="AddNewInterval" value="Add"/>
+    <input type="button" class="btn btn-outline-secondary" @onclick="AddNewInterval" value="Add" />
 </div>
 
 @if (Intervals.Any())
 {
     <h2>Interval Count: @Intervals.Count</h2>
-    foreach(Interval interval in Intervals)
+    foreach (Interval interval in Intervals)
     {
         <Interval Name="@interval.Name" TimeString="@interval.TimeString"></Interval>
     }

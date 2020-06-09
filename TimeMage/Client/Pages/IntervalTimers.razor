@@ -4,7 +4,7 @@
 
 @if (IntervalSets.Any())
 {
-    @foreach (IntervalSet intervalSet in IntervalSets)
+    @foreach (IntervalSetItem intervalSet in IntervalSets)
     {
         <div>@intervalSet.SetName</div>
     }
@@ -16,5 +16,5 @@ else
 
 
 @code {
-    public List<IntervalSet> IntervalSets { get; set; } = new List<IntervalSet>();
+    public List<IntervalSetItem> IntervalSets { get; set; } = new List<IntervalSetItem>();
 }

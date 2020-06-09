@@ -1,5 +1,4 @@
-﻿@using System.Diagnostics;
-<tr>
+﻿<tr>
     <td>
         <span class="oi oi-document" aria-hidden="true" @onclick="() => DuplicateCallback.InvokeAsync(this)"></span>
     </td>
@@ -38,9 +37,9 @@
     public TimeSpan Time { get; set; } = new TimeSpan(0, 5, 0);
     private TimeSpan _timeLeft = new TimeSpan(0, 0, 15);
     [Parameter]
-    public EventCallback<Timer> DeleteCallback { get; set; }
+    public EventCallback<TimerItem> DeleteCallback { get; set; }
     [Parameter]
-    public EventCallback<Timer> DuplicateCallback { get; set; }
+    public EventCallback<TimerItem> DuplicateCallback { get; set; }
 
     public void StartTimer()
     {
@@ -84,6 +83,4 @@
 
         return Task.CompletedTask;
     }
-
-
 }
