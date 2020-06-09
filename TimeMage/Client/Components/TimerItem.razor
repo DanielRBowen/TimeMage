@@ -1,43 +1,68 @@
 ﻿<tr>
-    <td>
-        <span class="oi oi-document" aria-hidden="true" @onclick="() => DuplicateCallback.InvokeAsync(Timer)"></span>
-    </td>
-    <td>
-        <span class="oi oi-trash" aria-hidden="true" @onclick="() => DeleteCallback.InvokeAsync(Timer)"></span>
-    </td>
-    <td>
-        <input type="text" class="form-control" aria-label="Name" @bind-value="Timer.Name" placeholder="Name">
-
-    </td>
-    @if (_timerRunning)
+    @if (IsEditing && _isTimerRunning == false)
     {
-        <td class="mx-3">@_timeLeft</td>
+        <td>
+            <span class="oi oi-document" aria-hidden="true" @onclick="() => OnDuplicate.InvokeAsync(Timer)"></span>
+        </td>
+        <td>
+            <span class="oi oi-trash" aria-hidden="true" @onclick="() => OnDelete.InvokeAsync(Timer)"></span>
+        </td>
+        <td>
+            <input type="text" class="form-control" aria-label="Name" @bind-value="Timer.Name" placeholder="Name">
+            <input type="text" class="form-control" aria-label="Time" @bind-value="Timer.Time">
+        </td>
     }
     else
     {
-        <td><input type="text" class="form-control" aria-label="Time" @bind-value="Timer.Time"></td>
+        <td>
+            <h5>@Timer.Name</h5>
+            @if (_isTimerRunning)
+            {
+                <h2>@_timeLeft</h2>
+            }
+            else
+            {
+                <h2>@Timer.Time</h2>
+            }
+            @if (playSound)
+            {
+                <audio hidden loop autoplay>
+                    <source src="sounds/ding.wav" />
+                </audio>
+            }
+        </td>
     }
     <td>
-        @if (_timerRunning)
+        @if (IsEditing)
         {
-            <span class="oi oi-media-stop m-2" aria-hidden="true" @onclick="StopTimer"></span>
+            <span>&nbsp;</span>
         }
         else
         {
-            <span class="oi oi-media-play m-2" aria-hidden="true" @onclick="StartTimer"></span>
+            @if (_isTimerRunning)
+            {
+                <span class="oi oi-media-stop m-2" aria-hidden="true" @onclick="StopTimer"></span>
+            }
+            else
+            {
+                <span class="oi oi-media-play m-2" aria-hidden="true" @onclick="StartTimer"></span>
+            }
         }
     </td>
 </tr>
 
 @code {
-    private bool _timerRunning = false;
-    [Parameter]
-    public TmTimer Timer { get; set; }
+    bool playSound = false;
+    private bool _isTimerRunning = false;
     private TimeSpan _timeLeft = new TimeSpan(0, 0, 15);
     [Parameter]
-    public EventCallback<TmTimer> DeleteCallback { get; set; }
+    public TmTimer Timer { get; set; }
     [Parameter]
-    public EventCallback<TmTimer> DuplicateCallback { get; set; }
+    public bool IsEditing { get; set; } = false;
+    [Parameter]
+    public EventCallback<TmTimer> OnDelete { get; set; }
+    [Parameter]
+    public EventCallback<TmTimer> OnDuplicate { get; set; }
 
     public void StartTimer()
     {
@@ -52,8 +77,8 @@
         }
 
         _timeLeft = Timer.Time;
-        _timerRunning = true;
-        while (_timeLeft > new TimeSpan() && _timerRunning == true)
+        _isTimerRunning = true;
+        while (_timeLeft > new TimeSpan() && _isTimerRunning == true)
         {
             await Task.Delay(1000);
             _timeLeft = _timeLeft.Subtract(new TimeSpan(0, 0, 1));
@@ -65,14 +90,15 @@
 
     public void StopTimer()
     {
-        _timerRunning = false;
+        _isTimerRunning = false;
+        playSound = false;
     }
 
     Task AfterTime()
     {
-        if (_timerRunning)
+        if (_isTimerRunning)
         {
-            // play sound;
+            playSound = true;
         }
         else
         {
