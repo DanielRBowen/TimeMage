@@ -1,6 +1,42 @@
 ﻿@page "/timers"
 
-<Timer></Timer>
-@code {
+<button type="button" @onclick="Add"><span class="oi oi-plus" aria-hidden="true"></span></button>
 
+
+@if (TimerList.Any())
+{
+    foreach (Timer timer in TimerList)
+    {
+        <table>
+            <tbody>
+                <Timer Name="@timer.Name" Time="@timer.Time" DuplicateCallback="Duplicate" DeleteCallback="Delete"></Timer>
+            </tbody>
+        </table>
+    }
+}
+else
+{
+    <div>There are no timers to display.</div>
+}
+
+@code {
+    public List<Timer> TimerList { get; set; } = new List<Timer>();
+
+    public void Add()
+    {
+        TimerList.Add(new Timer());
+        StateHasChanged();
+    }
+
+    public void Delete(Timer timerToDelete)
+    {
+        TimerList.Remove(timerToDelete);
+        StateHasChanged();
+    }
+
+    public void Duplicate(Timer timerToDuplicate)
+    {
+        TimerList.Add(timerToDuplicate);
+        StateHasChanged();
+    }
 }
