@@ -1,15 +1,15 @@
 ﻿@page "/timerspage"
-
+@inject TimeMageState TimeMageState
 <button type="button" @onclick="Add"><span class="oi oi-plus" aria-hidden="true"></span></button>
 
 
-@if (TimerList.Any())
+@if (tmTimers.Any())
 {
-    foreach (TimerItem timer in TimerList)
+    foreach (TmTimer timer in tmTimers)
     {
         <table>
             <tbody>
-                <TimerItem Name="@timer.Name" Time="@timer.Time" DuplicateCallback="Duplicate" DeleteCallback="Delete"></TimerItem>
+                <TimerItem Timer="timer" DuplicateCallback="Duplicate" DeleteCallback="Delete"></TimerItem>
             </tbody>
         </table>
     }
@@ -20,23 +20,20 @@ else
 }
 
 @code {
-    public List<TimerItem> TimerList { get; set; } = new List<TimerItem>();
+    List<TmTimer> tmTimers => TimeMageState.Timers;
 
     public void Add()
     {
-        TimerList.Add(new TimerItem());
-        StateHasChanged();
+        TimeMageState.Timers.Add(new TmTimer());
     }
 
-    public void Delete(TimerItem timerToDelete)
+    public void Delete(TmTimer timerToDelete)
     {
-        TimerList.Remove(timerToDelete);
-        StateHasChanged();
+        TimeMageState.Timers.Remove(timerToDelete);
     }
 
-    public void Duplicate(TimerItem timerToDuplicate)
+    public void Duplicate(TmTimer timerToDuplicate)
     {
-        TimerList.Add(timerToDuplicate);
-        StateHasChanged();
+        TimeMageState.Timers.Add(new TmTimer { Name = timerToDuplicate.Name, Time = timerToDuplicate.Time });
     }
 }

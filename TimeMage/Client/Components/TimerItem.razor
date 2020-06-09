@@ -1,12 +1,12 @@
 ﻿<tr>
     <td>
-        <span class="oi oi-document" aria-hidden="true" @onclick="() => DuplicateCallback.InvokeAsync(this)"></span>
+        <span class="oi oi-document" aria-hidden="true" @onclick="() => DuplicateCallback.InvokeAsync(Timer)"></span>
     </td>
     <td>
-        <span class="oi oi-trash" aria-hidden="true" @onclick="() => DeleteCallback.InvokeAsync(this)"></span>
+        <span class="oi oi-trash" aria-hidden="true" @onclick="() => DeleteCallback.InvokeAsync(Timer)"></span>
     </td>
     <td>
-        <input type="text" class="form-control" aria-label="Name" @bind-value="Name" placeholder="Name">
+        <input type="text" class="form-control" aria-label="Name" @bind-value="Timer.Name" placeholder="Name">
 
     </td>
     @if (_timerRunning)
@@ -15,7 +15,7 @@
     }
     else
     {
-        <td><input type="text" class="form-control" aria-label="Time" @bind-value="Time"></td>
+        <td><input type="text" class="form-control" aria-label="Time" @bind-value="Timer.Time"></td>
     }
     <td>
         @if (_timerRunning)
@@ -32,14 +32,12 @@
 @code {
     private bool _timerRunning = false;
     [Parameter]
-    public string Name { get; set; } = "Timer";
-    [Parameter]
-    public TimeSpan Time { get; set; } = new TimeSpan(0, 5, 0);
+    public TmTimer Timer { get; set; }
     private TimeSpan _timeLeft = new TimeSpan(0, 0, 15);
     [Parameter]
-    public EventCallback<TimerItem> DeleteCallback { get; set; }
+    public EventCallback<TmTimer> DeleteCallback { get; set; }
     [Parameter]
-    public EventCallback<TimerItem> DuplicateCallback { get; set; }
+    public EventCallback<TmTimer> DuplicateCallback { get; set; }
 
     public void StartTimer()
     {
@@ -48,12 +46,12 @@
 
     async Task RunTimer()
     {
-        if (Time.TotalSeconds <= 0)
+        if (Timer.Time.TotalSeconds <= 0)
         {
             return;
         }
 
-        _timeLeft = Time;
+        _timeLeft = Timer.Time;
         _timerRunning = true;
         while (_timeLeft > new TimeSpan() && _timerRunning == true)
         {

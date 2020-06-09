@@ -18,6 +18,7 @@ namespace TimeMage.Client
             builder.RootComponents.Add<App>("app");
 
             builder.Services.AddTransient(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+            builder.Services.AddScoped<TimeMageState>();
 
             await builder.Build().RunAsync();
         }
