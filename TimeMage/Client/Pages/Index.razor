@@ -1,1 +1,40 @@
 ﻿@page "/"
+@inject TimeMageState TimeMageState
+<button type="button" @onclick="Add"><span class="oi oi-plus" aria-hidden="true"></span></button>
+<button type="button" @onclick="() => isEditing = !isEditing"><span class="oi oi-pencil" aria-hidden="true"></span></button>
+
+@if (tmTimers.Any())
+{
+    foreach (TmTimer timer in tmTimers)
+    {
+<table>
+    <tbody>
+        <TimerItem Timer="timer" IsEditing="isEditing" OnDuplicate="Duplicate" OnDelete="Delete"></TimerItem>
+    </tbody>
+</table>
+    }
+}
+else
+{
+<div>There are no timers to display.</div>
+}
+
+@code {
+    bool isEditing = false;
+    List<TmTimer> tmTimers => TimeMageState.Timers;
+
+    public void Add()
+    {
+        TimeMageState.Timers.Add(new TmTimer());
+    }
+
+    public void Delete(TmTimer timerToDelete)
+    {
+        TimeMageState.Timers.Remove(timerToDelete);
+    }
+
+    public void Duplicate(TmTimer timerToDuplicate)
+    {
+        TimeMageState.Timers.Add(new TmTimer { Name = timerToDuplicate.Name, Time = timerToDuplicate.Time });
+    }
+}
