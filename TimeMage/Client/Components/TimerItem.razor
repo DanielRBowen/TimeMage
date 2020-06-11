@@ -1,5 +1,5 @@
 ﻿<tr>
-    @if (IsEditing && _isTimerRunning == false)
+    @if (IsEditing && Timer.IsTimerRunning == false)
     {
         <td>
             <span class="oi oi-document pointer" aria-hidden="true" @onclick="() => OnDuplicate.InvokeAsync(Timer)"></span>
@@ -16,9 +16,9 @@
     {
         <td>
             <h5>@Timer.Name</h5>
-            @if (_isTimerRunning)
+            @if (Timer.IsTimerRunning)
             {
-                <h2>@_timeLeft</h2>
+                <h2>@Timer.TimeLeft</h2>
             }
             else
             {
@@ -39,13 +39,13 @@
         }
         else
         {
-            @if (_isTimerRunning)
+            @if (Timer.IsTimerRunning)
             {
-                <span class="oi oi-media-stop m-2 pointer" aria-hidden="true" @onclick="StopTimer"></span>
+                <span class="oi oi-media-stop m-2 pointer" aria-hidden="true" @onclick="() => Timer.Stop()"></span>
             }
             else
             {
-                <span class="oi oi-media-play m-2 pointer" aria-hidden="true" @onclick="StartTimer"></span>
+                <span class="oi oi-media-play m-2 pointer" aria-hidden="true" @onclick="() => Timer.Start()"></span>
             }
         }
     </td>
@@ -53,8 +53,6 @@
 
 @code {
     bool playSound = false;
-    private bool _isTimerRunning = false;
-    private TimeSpan _timeLeft = new TimeSpan(0, 0, 15);
     [Parameter]
     public TmTimer Timer { get; set; }
     [Parameter]
@@ -64,47 +62,30 @@
     [Parameter]
     public EventCallback<TmTimer> OnDuplicate { get; set; }
 
-    public void StartTimer()
+    protected override void OnInitialized()
     {
-        Task.Run(() => RunTimer());
+        Timer.OnSecondElapsed += Timer_OnSecondElapsed;
+        Timer.OnStopped += Timer_OnStopped;
+        Timer.OnFinished += Timer_OnFinished;
     }
 
-    async Task RunTimer()
+    private void Timer_OnSecondElapsed(object sender, EventArgs e)
     {
-        if (Timer.Time.TotalSeconds <= 0)
-        {
-            return;
-        }
-
-        _timeLeft = Timer.Time;
-        _isTimerRunning = true;
-        while (_timeLeft > new TimeSpan() && _isTimerRunning == true)
-        {
-            await Task.Delay(1000);
-            _timeLeft = _timeLeft.Subtract(new TimeSpan(0, 0, 1));
-            StateHasChanged();
-        }
-        await AfterTime();
         StateHasChanged();
     }
 
-    public void StopTimer()
+    private void Timer_OnStopped(object sender, EventArgs e)
     {
-        _isTimerRunning = false;
         playSound = false;
     }
 
-    Task AfterTime()
+    private void Timer_OnFinished(object sender, EventArgs e)
     {
-        if (_isTimerRunning)
+        if (Timer.IsTimerRunning)
         {
             playSound = true;
         }
-        else
-        {
 
-        }
-
-        return Task.CompletedTask;
+        StateHasChanged();
     }
 }
