@@ -134,3 +134,7 @@ a, .btn-link {
         display: block;
     }
 }
+
+.pointer {
+    cursor: pointer;
+}

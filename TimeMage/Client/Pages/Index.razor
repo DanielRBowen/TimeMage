@@ -1,2 +1,9 @@
 ﻿@page "/"
-<TimersPage></TimersPage>
+@inject NavigationManager NavigationManager
+
+@code {
+    protected override void OnInitialized()
+    {
+        NavigationManager.NavigateTo("timerspage");
+    }
+}
