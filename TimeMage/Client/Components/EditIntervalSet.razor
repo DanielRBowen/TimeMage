@@ -1,0 +1,43 @@
+﻿
+<button type="button" @onclick="Add"><span class="oi oi-plus" aria-hidden="true"></span></button>
+<button type="button" class="btn btn-outline-primary" @onclick="() => OnDone.InvokeAsync(true)">Done</button>
+<input type="text" class="form-control" aria-label="Name" @bind-value="IntervalSet.Name" placeholder="Name">
+
+@if (IntervalSet.Intervals.Any())
+{
+    foreach (TmTimer interval in IntervalSet.Intervals)
+    {
+        <table>
+            <tbody>
+                <TimerItem Timer="interval" IsEditing="true" OnDuplicate="Duplicate" OnDelete="Delete"></TimerItem>
+            </tbody>
+        </table>
+    }
+}
+else
+{
+    <div>There are no intervals to display.</div>
+}
+
+@code {
+    [Parameter]
+    public IntervalSet IntervalSet { get; set; }
+
+    [Parameter]
+    public EventCallback<bool> OnDone { get; set; }
+
+    public void Add()
+    {
+        IntervalSet.Intervals.Add(new TmTimer { Name = "Mountain Climbers", Time = new TimeSpan(0, 0, 10) });
+    }
+
+    public void Delete(TmTimer interval)
+    {
+        IntervalSet.Intervals.Remove(interval);
+    }
+
+    public void Duplicate(TmTimer interval)
+    {
+        IntervalSet.Intervals.Add(new TmTimer { Name = interval.Name, Time = interval.Time });
+    }
+}

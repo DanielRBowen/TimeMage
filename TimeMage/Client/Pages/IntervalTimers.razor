@@ -1,20 +1,54 @@
 ﻿@page "/intervaltimers"
+@inject TimeMageState TimeMageState
 
 <h1>Interval Timers</h1>
 
-@if (IntervalSets.Any())
+@if (isEditing)
 {
-    @foreach (IntervalSetItem intervalSet in IntervalSets)
-    {
-        <div>@intervalSet.SetName</div>
-    }
+    <EditIntervalSet IntervalSet="EditIntervalSet" OnDone="DoneEdit"></EditIntervalSet>
+
 }
 else
 {
-    <div>There are no Interval sets</div>
+    <button type="button" @onclick="Add"><span class="oi oi-plus" aria-hidden="true"></span></button>
+
+    @if (IntervalSets.Any())
+    {
+        <table>
+            <tbody>
+                @foreach (IntervalSet intervalSet in IntervalSets)
+                {
+                    <tr>
+                        <td>@intervalSet.Name</td>
+                        <td>
+                            <span class="oi oi-pencil pointer" aria-hidden="true" @onclick="() => { isEditing = !isEditing; EditIntervalSet = intervalSet; }"></span>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <div>There are no Interval sets</div>
+    }
 }
 
 
 @code {
-    public List<IntervalSetItem> IntervalSets { get; set; } = new List<IntervalSetItem>();
+    bool isEditing = false;
+
+    public List<IntervalSet> IntervalSets => TimeMageState.IntervalSets;
+
+    private IntervalSet EditIntervalSet;
+
+    public void Add()
+    {
+        IntervalSets.Add(new IntervalSet());
+    }
+
+    public void DoneEdit(bool done)
+    {
+        isEditing = !done;
+    }
 }
