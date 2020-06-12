@@ -97,6 +97,13 @@ namespace TimeMage.Shared
             StartCurrentInterval();
         }
 
+        private void StopFinishedCurrentInterval()
+        {
+            Intervals[_currentIntervalIndex].OnSecondElapsed -= Interval_OnSecondElapsed;
+            Intervals[_currentIntervalIndex].OnFinished -= Interval_OnFinished;
+            Intervals[_currentIntervalIndex].Stop();
+        }
+
         private void StartCurrentInterval()
         {
             _currentTimerLeft = Intervals[_currentIntervalIndex].TimeLeft;
@@ -105,13 +112,13 @@ namespace TimeMage.Shared
             Intervals[_currentIntervalIndex].OnSecondElapsed += Interval_OnSecondElapsed;
             Intervals[_currentIntervalIndex].OnFinished += Interval_OnFinished;
             Intervals[_currentIntervalIndex].Start();
-
         }
 
         public void Stop()
         {
             _isTimerRunning = false;
-            Intervals.ForEach(timer => timer.Stop());
+            _totalTimeLeft = new TimeSpan();
+            Intervals.ForEach(timer => { timer.Stop(); timer.OnFinished -= Interval_OnFinished; timer.OnSecondElapsed -= Interval_OnSecondElapsed; });
             Stopped(EventArgs.Empty);
         }
 
@@ -128,6 +135,7 @@ namespace TimeMage.Shared
 
         private void Interval_OnFinished(object sender, EventArgs e)
         {
+            StopFinishedCurrentInterval();
             _currentIntervalIndex++;
 
             if (_currentIntervalIndex < Intervals.Count)

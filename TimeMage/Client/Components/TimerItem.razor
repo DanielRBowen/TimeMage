@@ -45,7 +45,7 @@
             }
             else
             {
-                <span class="oi oi-media-play m-2 pointer" aria-hidden="true" @onclick="() => Timer.Start()"></span>
+                <span class="oi oi-media-play m-2 pointer" aria-hidden="true" @onclick="() => Start()"></span>
             }
         }
     </td>
@@ -67,6 +67,11 @@
         Timer.OnSecondElapsed += Timer_OnSecondElapsed;
         Timer.OnStopped += Timer_OnStopped;
         Timer.OnFinished += Timer_OnFinished;
+    }
+
+    private void Start()
+    {
+        Timer.Start();
     }
 
     private void Timer_OnSecondElapsed(object sender, EventArgs e)

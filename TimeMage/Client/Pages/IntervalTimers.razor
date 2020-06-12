@@ -8,7 +8,7 @@
     <EditIntervalSet IntervalSet="EditIntervalSet" OnDone="DoneEdit"></EditIntervalSet>
 
 }
-else if(isCurrentIntervalDisplayed)
+else if (isCurrentIntervalDisplayed)
 {
     <CurrentIntervalSet IntervalSet="CurrentIntervalSet" OnClose="CloseCurrent"></CurrentIntervalSet>
 }
@@ -24,8 +24,14 @@ else
                 {
                     <tr>
                         <td>@intervalSet.Name</td>
+                        @if (CurrentIntervalSet == null || CurrentIntervalSet?.IsTimerRunning == false)
+                        {
+                            <td>
+                                <span class="oi oi-pencil pointer" aria-hidden="true" @onclick="() => { isEditing = !isEditing; EditIntervalSet = intervalSet; }"></span>
+                            </td>
+                        }
                         <td>
-                            <span class="oi oi-pencil pointer" aria-hidden="true" @onclick="() => { isEditing = !isEditing; EditIntervalSet = intervalSet; }"></span>
+                            <span class="oi oi-trash pointer" aria-hidden="true" @onclick="() => Delete(intervalSet)"></span>
                         </td>
                         <td>
                             <span class="oi oi-media-play pointer" aria-hidden="true" @onclick="() => { isCurrentIntervalDisplayed = !isCurrentIntervalDisplayed; CurrentIntervalSet = intervalSet; }"></span>
@@ -66,5 +72,10 @@ else
     public void CloseCurrent(bool closed)
     {
         isCurrentIntervalDisplayed = !closed;
+    }
+
+    public void Delete(IntervalSet intervalSet)
+    {
+        IntervalSets.Remove(intervalSet);
     }
 }
