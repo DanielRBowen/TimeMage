@@ -8,6 +8,10 @@
     <EditIntervalSet IntervalSet="EditIntervalSet" OnDone="DoneEdit"></EditIntervalSet>
 
 }
+else if(isCurrentIntervalDisplayed)
+{
+    <CurrentIntervalSet IntervalSet="CurrentIntervalSet" OnClose="CloseCurrent"></CurrentIntervalSet>
+}
 else
 {
     <button type="button" @onclick="Add"><span class="oi oi-plus" aria-hidden="true"></span></button>
@@ -22,6 +26,9 @@ else
                         <td>@intervalSet.Name</td>
                         <td>
                             <span class="oi oi-pencil pointer" aria-hidden="true" @onclick="() => { isEditing = !isEditing; EditIntervalSet = intervalSet; }"></span>
+                        </td>
+                        <td>
+                            <span class="oi oi-media-play pointer" aria-hidden="true" @onclick="() => { isCurrentIntervalDisplayed = !isCurrentIntervalDisplayed; CurrentIntervalSet = intervalSet; }"></span>
                         </td>
                     </tr>
                 }
@@ -38,9 +45,13 @@ else
 @code {
     bool isEditing = false;
 
+    bool isCurrentIntervalDisplayed = false;
+
     public List<IntervalSet> IntervalSets => TimeMageState.IntervalSets;
 
     private IntervalSet EditIntervalSet;
+
+    private IntervalSet CurrentIntervalSet;
 
     public void Add()
     {
@@ -50,5 +61,10 @@ else
     public void DoneEdit(bool done)
     {
         isEditing = !done;
+    }
+
+    public void CloseCurrent(bool closed)
+    {
+        isCurrentIntervalDisplayed = !closed;
     }
 }

@@ -1,0 +1,67 @@
+﻿
+<button type="button" class="btn btn-outline-primary" @onclick="() => OnClose.InvokeAsync(true)">Close</button>
+
+<div>@IntervalSet.Name</div>
+
+@if (IntervalSet.IsTimerRunning)
+{
+
+    <div>Time: @IntervalSet.TotalTimeLeft</div>
+
+    <div>Current Interval: @IntervalSet.CurrentIntervalName</div>
+
+    <div>Interval Time Left: @IntervalSet.CurrentTimerLeft</div>
+
+    <span class="oi oi-media-stop m-2 pointer" aria-hidden="true" @onclick="() => IntervalSet.Stop()"></span>
+}
+else
+{
+    <div>@IntervalSet.TotalTime</div>
+
+    <span class="oi oi-media-play m-2 pointer" aria-hidden="true" @onclick="() => IntervalSet.Start()"></span>
+}
+
+@if (playSound)
+{
+    <audio hidden loop autoplay>
+        <source src="sounds/ding.wav" />
+    </audio>
+}
+
+@code {
+    [Parameter]
+    public IntervalSet IntervalSet { get; set; }
+
+    [Parameter]
+    public EventCallback<bool> OnClose { get; set; }
+
+    bool playSound = false;
+
+    protected override void OnInitialized()
+    {
+        IntervalSet.OnSecondElapsed += IntervalSet_OnSecondElapsed;
+        IntervalSet.OnStopped += IntervalSet_OnStopped;
+        IntervalSet.OnFinished += IntervalSet_OnFinished;
+    }
+
+    private void IntervalSet_OnSecondElapsed(object sender, EventArgs e)
+    {
+        StateHasChanged();
+    }
+
+    private void IntervalSet_OnStopped(object sender, EventArgs e)
+    {
+        playSound = false;
+    }
+
+    private void IntervalSet_OnFinished(object sender, EventArgs e)
+    {
+        if (IntervalSet.IsTimerRunning)
+        {
+            playSound = true;
+        }
+
+        StateHasChanged();
+    }
+
+}

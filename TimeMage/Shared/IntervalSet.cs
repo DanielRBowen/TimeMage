@@ -10,6 +10,16 @@ namespace TimeMage.Shared
 
         public List<TmTimer> Intervals { get; set; } = new List<TmTimer>();
 
+        public TimeSpan TotalTime
+        {
+            get
+            {
+                var totalTime = new TimeSpan();
+                Intervals.ForEach(timer => totalTime += timer.Time);
+                return totalTime;
+            }
+
+        }
         private bool _isTimerRunning;
 
         public bool IsTimerRunning
@@ -89,7 +99,7 @@ namespace TimeMage.Shared
 
         private void StartCurrentInterval()
         {
-            _currentTimerLeft = Intervals[_currentIntervalIndex].Time;
+            _currentTimerLeft = Intervals[_currentIntervalIndex].TimeLeft;
             _currentIntervalName = Intervals[_currentIntervalIndex].Name;
             CurrentIntervalStarted(EventArgs.Empty);
             Intervals[_currentIntervalIndex].OnSecondElapsed += Interval_OnSecondElapsed;
