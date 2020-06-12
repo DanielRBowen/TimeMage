@@ -91,6 +91,5 @@ namespace TimeMage.Shared
             _isTimerRunning = false;
             SecondElapsed(EventArgs.Empty); // For State has changed.
         }
-
     }
 }

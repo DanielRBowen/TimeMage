@@ -1,21 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk.Web">
-
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>65d89903-5eae-49dc-b3ac-5579d99b2107</UserSecretsId>
   </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="3.2.0" />
+    <PackageReference Include="Microsoft.CognitiveServices.Speech" Version="1.11.0" />
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\Client\TimeMage.Client.csproj" />
     <ProjectReference Include="..\Shared\TimeMage.Shared.csproj" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-
 </Project>
