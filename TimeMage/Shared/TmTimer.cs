@@ -17,6 +17,12 @@ namespace TimeMage.Shared
         }
 
         private bool _isTimerStopping;
+
+        public bool IsTimerStopping
+        {
+            get { return _isTimerStopping; }
+        }
+
         private bool _isTimerRunning;
 
         public bool IsTimerRunning
@@ -68,7 +74,6 @@ namespace TimeMage.Shared
                 SecondElapsed(EventArgs.Empty);
             }
 
-            _isTimerRunning = false;
             _timeLeft = new TimeSpan();
             Finished(EventArgs.Empty);
         }
@@ -76,7 +81,16 @@ namespace TimeMage.Shared
         public void Stop()
         {
             _isTimerStopping = true;
+            Task.Run(() => Stopping());
             Stopped(EventArgs.Empty);
         }
+
+        private async Task Stopping()
+        {
+            await Task.Delay(1000);
+            _isTimerRunning = false;
+            SecondElapsed(EventArgs.Empty); // For State has changed.
+        }
+
     }
 }

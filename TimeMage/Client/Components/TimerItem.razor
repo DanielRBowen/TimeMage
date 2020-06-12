@@ -86,11 +86,23 @@
 
     private void Timer_OnFinished(object sender, EventArgs e)
     {
-        if (Timer.IsTimerRunning)
+        if (Timer.IsTimerStopping == false)
         {
             playSound = true;
+            Task.Run(() => StopPlayingTheSoundInAMoment());
         }
 
         StateHasChanged();
+    }
+
+    private async Task StopPlayingTheSoundInAMoment()
+    {
+        await Task.Delay(TimeSpan.FromMinutes(1));
+
+        if (playSound == true)
+        {
+            playSound = false;
+            StateHasChanged();
+        }
     }
 }
