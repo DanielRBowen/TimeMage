@@ -26,6 +26,11 @@ else
     [Parameter]
     public EventCallback<bool> OnDone { get; set; }
 
+    protected override void OnInitialized()
+    {
+        IntervalSet.Stop();
+    }
+
     public void Add()
     {
         IntervalSet.Intervals.Add(new TmTimer { Name = "Mountain Climbers", Time = new TimeSpan(0, 0, 10) });

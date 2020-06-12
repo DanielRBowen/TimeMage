@@ -66,7 +66,13 @@ namespace TimeMage.Shared
                 SecondElapsed(EventArgs.Empty);
             }
 
+            await Done();
             Finished(EventArgs.Empty);
+        }
+
+        private Task Done()
+        {
+            return Task.CompletedTask;
         }
 
         public void Stop()

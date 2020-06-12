@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace TimeMage.Shared
 {
@@ -18,7 +19,6 @@ namespace TimeMage.Shared
                 Intervals.ForEach(timer => totalTime += timer.Time);
                 return totalTime;
             }
-
         }
         private bool _isTimerRunning;
 
