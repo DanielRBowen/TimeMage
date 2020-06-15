@@ -28,13 +28,12 @@ namespace TimeMage.Server.Controllers
             _logger = logger;
         }
 
-        [HttpPost("getspeechbytes")]
-        public async Task<IActionResult> GetSpeechBytes([FromBody] TextDto textDto)
+        [HttpPost("getspeech")]
+        public async Task<IActionResult> GetSpeech([FromBody] TextDto textDto)
         {
             try
             {
                 var text = textDto.Text;
-
                 var audioData = await _distributedCache.GetAsync(text);
 
                 if (audioData != null)

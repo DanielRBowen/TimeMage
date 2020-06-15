@@ -1,4 +1,5 @@
-﻿
+﻿@inject IJSRuntime JS
+@inject SpeechToTextClient SpeechToTextClient
 <button type="button" class="btn btn-outline-primary" @onclick="() => OnClose.InvokeAsync(true)">Close</button>
 
 <div>@IntervalSet.Name</div>
@@ -42,6 +43,7 @@ else
         IntervalSet.OnSecondElapsed += IntervalSet_OnSecondElapsed;
         IntervalSet.OnStopped += IntervalSet_OnStopped;
         IntervalSet.OnFinished += IntervalSet_OnFinished;
+        IntervalSet.OnCurrentIntervalStarted += IntervalSet_OnCurrentIntervalStarted;
     }
 
     private void IntervalSet_OnSecondElapsed(object sender, EventArgs e)
@@ -72,6 +74,22 @@ else
         if (playSound == true)
         {
             playSound = false;
+            StateHasChanged();
+        }
+    }
+
+    private void IntervalSet_OnCurrentIntervalStarted(object sender, EventArgs e)
+    {
+        Task.Run(() => SayIntervalName());
+    }
+
+    private async Task SayIntervalName()
+    {
+        byte[] audioData = await SpeechToTextClient.GetSpeech(IntervalSet.CurrentIntervalName);
+
+        if (audioData != null)
+        {
+            await Howler.Play(JS, audioData);
             StateHasChanged();
         }
     }

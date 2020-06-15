@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeMage.Client", "TimeMage
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeMage.Shared", "TimeMage\Shared\TimeMage.Shared.csproj", "{8B6ABB03-AC05-41EB-89F6-5C33A3F5A0EA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeMage.ComponentsLibrary", "TimeMage.ComponentsLibrary\TimeMage.ComponentsLibrary.csproj", "{C43CAF60-80BF-4F44-9B12-F2F3E7E1C919}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{8B6ABB03-AC05-41EB-89F6-5C33A3F5A0EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B6ABB03-AC05-41EB-89F6-5C33A3F5A0EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B6ABB03-AC05-41EB-89F6-5C33A3F5A0EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C43CAF60-80BF-4F44-9B12-F2F3E7E1C919}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C43CAF60-80BF-4F44-9B12-F2F3E7E1C919}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C43CAF60-80BF-4F44-9B12-F2F3E7E1C919}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C43CAF60-80BF-4F44-9B12-F2F3E7E1C919}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
