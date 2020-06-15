@@ -1,17 +1,34 @@
-﻿//Frome: https://developer.mozilla.org/en-US/docs/Web/API/Blob
-function typedArrayToURL(typedArray, mimeType) {
-    return URL.createObjectURL(new Blob([typedArray.buffer], { type: mimeType }))
+﻿function b64toBlob(b64Data, contentType, sliceSize) {
+    contentType = contentType || '';
+    sliceSize = sliceSize || 512;
+
+    const byteCharacters = atob(b64Data);
+    const byteArrays = [];
+
+    for (let offset = 0; offset < byteCharacters.length; offset += sliceSize) {
+        const slice = byteCharacters.slice(offset, offset + sliceSize);
+
+        const byteNumbers = new Array(slice.length);
+        for (let i = 0; i < slice.length; i++) {
+            byteNumbers[i] = slice.charCodeAt(i);
+        }
+
+        const byteArray = new Uint8Array(byteNumbers);
+
+        byteArrays.push(byteArray);
+    }
+
+    return new Blob(byteArrays, { type: contentType });
 }
 
 window.playAudio = {
-    playBlob: function (bytes) {
-        let blobUrl = typedArrayToURL(bytes, 'audio/wav');
+    // https://blazor-tutorial.net/knowledge-base/52136899/servir-archivos-incrustados-en-la-biblioteca--net-a-html-en-blazor
+    play: function (str64) {
+        const blob = b64toBlob(str64, "audio/wav");
+        const blobUrl = URL.createObjectURL(blob);
+        const audio = new Audio(blobUrl);
         console.log(blobUrl);
-        let sound = new Howl({
-            src: [blobUrl],
-            format: ['wav']
-        });
-
-        sound.play();
+        audio.currentTime = 0;
+        audio.play();
     }
 };

@@ -22,6 +22,11 @@ else
     <span class="oi oi-media-play m-2 pointer" aria-hidden="true" @onclick="() => IntervalSet.Start()"></span>
 }
 
+@if (IntervalSet.Name == "Fat Burn")
+{
+    <a href="https://youtu.be/9boaIRTLnns" target="_blank">How to do the fat burn workout?</a>
+}
+
 @if (playSound)
 {
     <audio hidden loop autoplay>
@@ -89,7 +94,7 @@ else
 
         if (audioData != null)
         {
-            await Howler.Play(JS, audioData);
+            await Audio.Play(JS, audioData);
             StateHasChanged();
         }
     }
