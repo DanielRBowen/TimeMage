@@ -33,8 +33,6 @@ namespace TimeMage.Client
                 var response = await _httpClient.PostAsJsonAsync("texttospeech/getspeech", textDto);
                 response.EnsureSuccessStatusCode();
                 var audioData = await response.Content.ReadFromJsonAsync<byte[]>();
-
-                //File.WriteAllBytes("speech.wav", audioData);
                 return audioData;
             }
             catch (Exception ex)

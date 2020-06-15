@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.CognitiveServices.Speech;
+using Microsoft.CognitiveServices.Speech.Audio;
 using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
@@ -29,7 +30,7 @@ namespace TimeMage.Server.Controllers
         }
 
         [HttpPost("getspeech")]
-        public async Task<IActionResult> GetSpeech([FromBody] TextDto textDto)
+        public async Task<IActionResult> GetSpeech([FromBody]TextDto textDto)
         {
             try
             {
@@ -41,7 +42,8 @@ namespace TimeMage.Server.Controllers
                     return Ok(audioData);
                 }
 
-                using var synthesizer = new SpeechSynthesizer(_speechConfig);
+                using var audioStream = AudioOutputStream.CreatePullStream();
+                using var synthesizer = new SpeechSynthesizer(_speechConfig, AudioConfig.FromStreamOutput(audioStream));
                 using var result = await synthesizer.SpeakTextAsync(text);
 
                 if (result.Reason == ResultReason.SynthesizingAudioCompleted)
@@ -66,7 +68,7 @@ namespace TimeMage.Server.Controllers
                     return StatusCode((int)HttpStatusCode.InternalServerError, cancellation);
                 }
 
-                return StatusCode((int)HttpStatusCode.InternalServerError);
+                return StatusCode((int)HttpStatusCode.InternalServerError, result.Reason);
             }
             catch (Exception ex)
             {
