@@ -59,6 +59,14 @@ else
 
     private IntervalSet CurrentIntervalSet;
 
+    protected override void OnInitialized()
+    {
+        if (IntervalSets.Any(intervalSet => intervalSet.Name == "Fat Burn") == false)
+        {
+            IntervalSets.Add(PreloadedIntervalSets.FatBurn);
+        }
+    }
+
     public void Add()
     {
         IntervalSets.Add(new IntervalSet());

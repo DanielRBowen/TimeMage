@@ -6,9 +6,10 @@ function typedArrayToURL(typedArray, mimeType) {
 window.playAudio = {
     playBlob: function (bytes) {
         let blobUrl = typedArrayToURL(bytes, 'audio/wav');
-        var sound = new Howl({
+        console.log(blobUrl);
+        let sound = new Howl({
             src: [blobUrl],
-            ext: ['wav']
+            format: ['wav']
         });
 
         sound.play();
