@@ -7,7 +7,7 @@ namespace TimeMage.Shared
 {
     public class IntervalSet
     {
-        public string Name { get; set; } = "Fat Burn";
+        public string Name { get; set; } = "Name";
 
         public List<TmTimer> Intervals { get; set; } = new List<TmTimer>();
 

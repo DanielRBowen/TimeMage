@@ -8,7 +8,7 @@
             <span class="oi oi-trash pointer" aria-hidden="true" @onclick="() => OnDelete.InvokeAsync(Timer)"></span>
         </td>
         <td>
-            <input type="text" class="form-control" aria-label="Name" @bind-value="Timer.Name" placeholder="Name">
+            <input type="text" class="form-control" aria-label="Name" @bind-value="Timer.Name" placeholder="Name" maxlength="34">
             <input type="text" class="form-control" aria-label="Time" @bind-value="Timer.Time">
         </td>
     }

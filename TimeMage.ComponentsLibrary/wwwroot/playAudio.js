@@ -27,7 +27,6 @@ window.playAudio = {
         const blob = b64toBlob(str64, "audio/wav");
         const blobUrl = URL.createObjectURL(blob);
         const audio = new Audio(blobUrl);
-        console.log(blobUrl);
         audio.currentTime = 0;
         audio.play();
     }

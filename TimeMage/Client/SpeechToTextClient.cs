@@ -25,6 +25,7 @@ namespace TimeMage.Client
         {
             try
             {
+                text = text.ToLowerInvariant().Trim();
                 var audioData = await _localStorageService.GetItemAsync<byte[]>(text);
 
                 if (audioData == null)
