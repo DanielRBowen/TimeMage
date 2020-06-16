@@ -2,39 +2,48 @@
 @inject SpeechToTextClient SpeechToTextClient
 <button type="button" class="btn btn-outline-primary" @onclick="() => OnClose.InvokeAsync(true)">Close</button>
 
-<div>@IntervalSet.Name</div>
+<div class="text-center justify-content-center">
+    <div class="row"><div class="col-12">@IntervalSet.Name</div></div>
 
-@if (IntervalSet.IsTimerRunning)
-{
+    @if (IntervalSet.IsTimerRunning)
+    {
 
-    <div>Time: @IntervalSet.TotalTimeLeft</div>
+        <div class="@singleColumnCenter">Time: @IntervalSet.TotalTimeLeft</div>
 
-    <div>Current Interval: @IntervalSet.CurrentIntervalName</div>
+        <div class="@singleColumnCenter">Current Interval: @IntervalSet.CurrentIntervalName</div>
 
-    <div>Interval Time Left: @IntervalSet.CurrentTimerLeft</div>
+        <div class="@singleColumnCenter">Interval Time Left: @IntervalSet.CurrentTimerLeft</div>
 
-    <span class="oi oi-media-stop m-2 pointer" aria-hidden="true" @onclick="() => IntervalSet.Stop()"></span>
-}
-else
-{
-    <div>@IntervalSet.TotalTime</div>
+        <button type="button" class="@singleColumnCenter btn btn-outline-danger" @onclick="() => IntervalSet.Stop()">
+            <span class="oi oi-media-stop m-2 pointer" aria-hidden="true"></span>
+        </button>
+    }
+    else
+    {
+        <div class="@singleColumnCenter">@IntervalSet.TotalTime</div>
 
-    <span class="oi oi-media-play m-2 pointer" aria-hidden="true" @onclick="() => IntervalSet.Start()"></span>
-}
+        <button type="button" class="@singleColumnCenter btn btn-outline-primary" @onclick="() => IntervalSet.Start()">
+            <span class="oi oi-media-play m-2 pointer" aria-hidden="true"></span>
+        </button>
+    }
 
-@if (IntervalSet.Name == "Fat Burn")
-{
-    <a href="https://youtu.be/9boaIRTLnns" target="_blank">How to do the fat burn workout?</a>
-}
+    @if (IntervalSet.Name == "Fat Burn")
+    {
+        <div class="@singleColumnCenter">
+            <a href="https://youtu.be/9boaIRTLnns" target="_blank">How to do the fat burn workout?</a>
+        </div>
+    }
 
-@if (playSound)
-{
-    <audio hidden loop autoplay>
-        <source src="sounds/ding.wav" />
-    </audio>
-}
+    @if (playSound)
+    {
+        <audio hidden loop autoplay>
+            <source src="sounds/ding.wav" />
+        </audio>
+    }
+</div>
 
 @code {
+
     [Parameter]
     public IntervalSet IntervalSet { get; set; }
 
@@ -42,6 +51,7 @@ else
     public EventCallback<bool> OnClose { get; set; }
 
     bool playSound = false;
+    string singleColumnCenter = "col-12 text-center d-flex justify-content-center my-3";
 
     protected override void OnInitialized()
     {

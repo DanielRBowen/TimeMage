@@ -1,22 +1,18 @@
 ﻿
 <button type="button" @onclick="Add"><span class="oi oi-plus" aria-hidden="true"></span></button>
 <button type="button" class="btn btn-outline-primary" @onclick="() => OnDone.InvokeAsync(true)">Done</button>
-<input type="text" class="form-control" aria-label="Name" @bind-value="IntervalSet.Name" placeholder="Name">
+<input type="text" class="form-control m-3" aria-label="Name" @bind-value="IntervalSet.Name" placeholder="Name">
 
 @if (IntervalSet.Intervals.Any())
 {
     foreach (TmTimer interval in IntervalSet.Intervals)
     {
-        <table>
-            <tbody>
-                <TimerItem Timer="interval" IsEditing="true" OnDuplicate="Duplicate" OnDelete="Delete"></TimerItem>
-            </tbody>
-        </table>
+        <TimerItem Timer="interval" IsEditing="true" OnDuplicate="Duplicate" OnDelete="Delete"></TimerItem>
     }
 }
 else
 {
-    <div>There are no intervals to display.</div>
+<div>There are no intervals to display.</div>
 }
 
 @code {

@@ -1,20 +1,20 @@
-﻿<tr>
+﻿<div class="row">
     @if (IsEditing && Timer.IsTimerRunning == false)
     {
-        <td>
-            <span class="oi oi-document pointer" aria-hidden="true" @onclick="() => OnDuplicate.InvokeAsync(Timer)"></span>
-        </td>
-        <td>
-            <span class="oi oi-trash pointer" aria-hidden="true" @onclick="() => OnDelete.InvokeAsync(Timer)"></span>
-        </td>
-        <td>
+        <div class="col-3">
+            <button type="button" class="btn btn-outline-success" @onclick="() => OnDuplicate.InvokeAsync(Timer)"><span class="oi oi-document" aria-hidden="true"></span></button>
+        </div>
+        <div class="col-3">
+            <button type="button" class="btn btn-outline-danger" @onclick="() => OnDelete.InvokeAsync(Timer)"><span class="oi oi-trash" aria-hidden="true"></span></button>
+        </div>
+        <div class="col-3">
             <input type="text" class="form-control" aria-label="Name" @bind-value="Timer.Name" placeholder="Name" maxlength="34">
             <input type="text" class="form-control" aria-label="Time" @bind-value="Timer.Time">
-        </td>
+        </div>
     }
     else
     {
-        <td>
+        <div class="col-9">
             <h5>@Timer.Name</h5>
             @if (Timer.IsTimerRunning)
             {
@@ -30,9 +30,9 @@
                     <source src="sounds/ding.wav" />
                 </audio>
             }
-        </td>
+        </div>
     }
-    <td>
+    <div class="col-3">
         @if (IsEditing)
         {
             <span>&nbsp;</span>
@@ -41,15 +41,19 @@
         {
             @if (Timer.IsTimerRunning)
             {
-                <span class="oi oi-media-stop m-2 pointer" aria-hidden="true" @onclick="() => Timer.Stop()"></span>
+                <button type="button" class="btn btn-outline-danger" @onclick="() => Timer.Stop()">
+                    <span class="oi oi-media-stop m-2 pointer" aria-hidden="true"></span>
+                </button>
             }
             else
             {
-                <span class="oi oi-media-play m-2 pointer" aria-hidden="true" @onclick="() => Start()"></span>
+                <div type="button" class="btn btn-outline-primary" @onclick="() => Start()">
+                    <span class="oi oi-media-play m-2 pointer" aria-hidden="true"></span>
+                </div>
             }
         }
-    </td>
-</tr>
+    </div>
+</div>
 
 @code {
     bool playSound = false;

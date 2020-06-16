@@ -138,3 +138,17 @@ a, .btn-link {
 .pointer {
     cursor: pointer;
 }
+
+@keyframes progressbar-slide {
+    0% {
+        transform: translateX(-200px);
+    }
+
+    70% {
+        transform: translateX(500px);
+    }
+
+    100% {
+        transform: translateX(500px);
+    }
+}

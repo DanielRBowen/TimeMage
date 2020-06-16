@@ -1,8 +1,6 @@
 ﻿@page "/intervaltimers"
 @inject TimeMageState TimeMageState
 
-<h1>Interval Timers</h1>
-
 @if (isEditing)
 {
     <EditIntervalSet IntervalSet="EditIntervalSet" OnDone="DoneEdit"></EditIntervalSet>
@@ -16,35 +14,39 @@ else
 {
     <button type="button" @onclick="Add"><span class="oi oi-plus" aria-hidden="true"></span></button>
 
-    @if (IntervalSets.Any())
-    {
-        <table>
-            <tbody>
-                @foreach (IntervalSet intervalSet in IntervalSets)
-                {
-                    <tr>
-                        <td>@intervalSet.Name</td>
-                        @if (CurrentIntervalSet == null || CurrentIntervalSet?.IsTimerRunning == false)
-                        {
-                            <td>
-                                <span class="oi oi-pencil pointer" aria-hidden="true" @onclick="() => { isEditing = !isEditing; EditIntervalSet = intervalSet; }"></span>
-                            </td>
-                        }
-                        <td>
-                            <span class="oi oi-trash pointer" aria-hidden="true" @onclick="() => Delete(intervalSet)"></span>
-                        </td>
-                        <td>
-                            <span class="oi oi-media-play pointer" aria-hidden="true" @onclick="() => { isCurrentIntervalDisplayed = !isCurrentIntervalDisplayed; CurrentIntervalSet = intervalSet; }"></span>
-                        </td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-    }
-    else
-    {
-        <div>There are no Interval sets</div>
-    }
+    <div class="text-center justify-content-center">
+        @if (IntervalSets.Any())
+        {
+            @foreach (IntervalSet intervalSet in IntervalSets)
+            {
+                <div class="row text-center d-flex justify-content-center">
+                    <div class="col-3">@intervalSet.Name</div>
+                    @if (CurrentIntervalSet == null || CurrentIntervalSet?.IsTimerRunning == false)
+                    {
+                        <div class="col-3">
+                            <button type="button" class="btn btn-outline-success" @onclick="() => { isEditing = !isEditing; EditIntervalSet = intervalSet; }">
+                                <span class="oi oi-pencil" aria-hidden="true"></span>
+                            </button>
+                        </div>
+                    }
+                    <div class="col-3">
+                        <button type="button" class="btn btn-outline-danger" @onclick="() => Delete(intervalSet)">
+                            <span class="oi oi-trash" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                    <div class="col-3">
+                        <button type="button" class="btn-outline-primary" @onclick="() => { isCurrentIntervalDisplayed = !isCurrentIntervalDisplayed; CurrentIntervalSet = intervalSet; }">
+                            <span class="oi oi-media-play" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <div>There are no Interval sets</div>
+        }
+    </div>
 }
 
 @code {

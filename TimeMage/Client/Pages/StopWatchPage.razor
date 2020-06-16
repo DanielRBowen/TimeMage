@@ -1,12 +1,33 @@
 ﻿@page "/stopwatchpage"
 <!--https://medium.com/@@hutohoto/blazor-building-a-timer-and-a-stopwatch-5aea682147aa-->
-<p><button type="button" @onclick="async () => { await TmStopWatch(); }">Start</button></p>
-<p><button type="button" @onclick="() => { is_stopwatchrunning = false; }">Pause</button></p>
-<p><button type="button" @onclick="async () => { await TmStopWatch(); }">Resume</button></p>
-<p><button type="button" @onclick="() => { is_stopwatchrunning = false; stopwatchvalue = new TimeSpan(); }">Stop</button></p>
-<p>@stopwatchvalue</p>
+<div class="row my-3">
+    <div class="@singleColumnCenter">
+        <button type="button" @onclick="async () => { await TmStopWatch(); }">Start</button>
+    </div>
+</div>
 
+<div class="row my-3">
+    <div class="@singleColumnCenter">
+        <button type="button" @onclick="() => { is_stopwatchrunning = false; }">Pause</button>
+    </div>
+</div>
+<div class="row my-3">
+    <div class="@singleColumnCenter">
+        <button type="button" @onclick="async () => { await TmStopWatch(); }">Resume</button>
+    </div>
+</div>
+<div class="row my-3">
+    <div class="@singleColumnCenter">
+        <button type="button" @onclick="() => { is_stopwatchrunning = false; stopwatchvalue = new TimeSpan(); }">Stop</button>
+    </div>
+</div>
+<div class="row my-3">
+    <div class="@singleColumnCenter">
+        @stopwatchvalue
+    </div>
+</div>
 @code {
+    string singleColumnCenter = "col-12 text-center d-flex justify-content-center";
     TimeSpan stopwatchvalue = new TimeSpan();
     bool is_stopwatchrunning = false;
 
