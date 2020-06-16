@@ -1,13 +1,13 @@
 ﻿<div class="row">
     @if (IsEditing && Timer.IsTimerRunning == false)
     {
-        <div class="col-3">
+        <div class="col-1">
             <button type="button" class="btn btn-outline-success" @onclick="() => OnDuplicate.InvokeAsync(Timer)"><span class="oi oi-document" aria-hidden="true"></span></button>
         </div>
-        <div class="col-3">
+        <div class="col-1">
             <button type="button" class="btn btn-outline-danger" @onclick="() => OnDelete.InvokeAsync(Timer)"><span class="oi oi-trash" aria-hidden="true"></span></button>
         </div>
-        <div class="col-3">
+        <div class="col-9">
             <input type="text" class="form-control" aria-label="Name" @bind-value="Timer.Name" placeholder="Name" maxlength="34">
             <input type="text" class="form-control" aria-label="Time" @bind-value="Timer.Time">
         </div>
@@ -32,7 +32,7 @@
             }
         </div>
     }
-    <div class="col-3">
+    <div class="col-1">
         @if (IsEditing)
         {
             <span>&nbsp;</span>
