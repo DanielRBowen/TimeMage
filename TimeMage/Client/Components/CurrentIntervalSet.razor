@@ -3,16 +3,16 @@
 <button type="button" class="btn btn-outline-primary" @onclick="() => OnClose.InvokeAsync(true)">Close</button>
 
 <div class="text-center justify-content-center">
-    <div class="row"><div class="col-12">@IntervalSet.Name</div></div>
+    <div class="row"><h5 class="col-12">@IntervalSet.Name</h5></div>
 
     @if (IntervalSet.IsTimerRunning)
     {
 
-        <div class="@singleColumnCenter">Time: @IntervalSet.TotalTimeLeft</div>
+        <h2 class="@singleColumnCenter">Time: @IntervalSet.TotalTimeLeft</h2>
 
-        <div class="@singleColumnCenter">Current Interval: @IntervalSet.CurrentIntervalName</div>
+        <h5 class="@singleColumnCenter">Current Interval: @IntervalSet.CurrentIntervalName</h5>
 
-        <div class="@singleColumnCenter">Interval Time Left: @IntervalSet.CurrentTimerLeft</div>
+        <h3 class="@singleColumnCenter">Interval Time Left: @IntervalSet.CurrentTimerLeft</h3>
 
         <button type="button" class="@singleColumnCenter btn btn-outline-danger" @onclick="() => IntervalSet.Stop()">
             <span class="oi oi-media-stop m-2 pointer" aria-hidden="true"></span>
@@ -20,7 +20,7 @@
     }
     else
     {
-        <div class="@singleColumnCenter">@IntervalSet.TotalTime</div>
+        <h2 class="@singleColumnCenter">@IntervalSet.TotalTime</h2>
 
         <button type="button" class="@singleColumnCenter btn btn-outline-primary" @onclick="() => IntervalSet.Start()">
             <span class="oi oi-media-play m-2 pointer" aria-hidden="true"></span>
