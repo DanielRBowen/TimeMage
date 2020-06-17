@@ -26,17 +26,17 @@ else
         IntervalSet.Stop();
     }
 
-    public async Task Add()
+    public void Add()
     {
         IntervalSet.Intervals.Add(new TmTimer { Name = "Mountain Climbers", Time = new TimeSpan(0, 0, 10) });
     }
 
-    public async Task Delete(TmTimer interval)
+    public void Delete(TmTimer interval)
     {
         IntervalSet.Intervals.Remove(interval);
     }
 
-    public async Task Duplicate(TmTimer interval)
+    public void Duplicate(TmTimer interval)
     {
         IntervalSet.Intervals.Add(new TmTimer { Name = interval.Name, Time = interval.Time });
     }
