@@ -60,8 +60,10 @@ else
 
     private IntervalSet CurrentIntervalSet;
 
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
+        await TimeMageState.LoadAsync();
+
         if (IntervalSets.Any(intervalSet => intervalSet.Name == "Fat Burn") == false)
         {
             IntervalSets.Add(PreloadedIntervalSets.FatBurn);
@@ -71,20 +73,24 @@ else
     public void Add()
     {
         IntervalSets.Add(new IntervalSet());
+        TimeMageState.SaveAsync();
     }
 
     public void DoneEdit(bool done)
     {
         isEditing = !done;
+        TimeMageState.SaveAsync();
     }
 
     public void CloseCurrent(bool closed)
     {
         isCurrentIntervalDisplayed = !closed;
+        TimeMageState.SaveAsync();
     }
 
     public void Delete(IntervalSet intervalSet)
     {
         IntervalSets.Remove(intervalSet);
+        TimeMageState.SaveAsync();
     }
 }

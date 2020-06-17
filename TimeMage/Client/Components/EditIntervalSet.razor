@@ -1,5 +1,4 @@
-﻿
-<button type="button" @onclick="Add"><span class="oi oi-plus" aria-hidden="true"></span></button>
+﻿<button type="button" @onclick="Add"><span class="oi oi-plus" aria-hidden="true"></span></button>
 <button type="button" class="btn btn-outline-primary" @onclick="() => OnDone.InvokeAsync(true)">Done</button>
 <input type="text" class="form-control m-3" aria-label="Name" @bind-value="IntervalSet.Name" placeholder="Name">
 
@@ -27,17 +26,17 @@ else
         IntervalSet.Stop();
     }
 
-    public void Add()
+    public async Task Add()
     {
         IntervalSet.Intervals.Add(new TmTimer { Name = "Mountain Climbers", Time = new TimeSpan(0, 0, 10) });
     }
 
-    public void Delete(TmTimer interval)
+    public async Task Delete(TmTimer interval)
     {
         IntervalSet.Intervals.Remove(interval);
     }
 
-    public void Duplicate(TmTimer interval)
+    public async Task Duplicate(TmTimer interval)
     {
         IntervalSet.Intervals.Add(new TmTimer { Name = interval.Name, Time = interval.Time });
     }
