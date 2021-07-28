@@ -1,6 +1,8 @@
 ﻿@using BlazorAudioPlayer.Models
 @inject IJSRuntime JS
 @inject SpeechToTextClient SpeechToTextClient
+@inject PreloadedIntervalSetsClient PreloadedIntervalSetsClient
+
 <button type="button" class="btn btn-outline-primary" @onclick="() => OnClose.InvokeAsync(true)">Close</button>
 
 <div class="text-center justify-content-center">
@@ -28,10 +30,10 @@
         </button>
     }
 
-    @if (IntervalSet.Name == "Fat Burn")
+    @if (_preloadedIntervalSets.Any(intervalSet => intervalSet.Name == IntervalSet.Name))
     {
         <div class="@singleColumnCenter">
-            <a href="https://youtu.be/9boaIRTLnns" target="_blank">How to do the fat burn workout?</a>
+            <a href="@IntervalSet.GuideUrl" target="_blank">Guide</a>
         </div>
     }
 
@@ -51,6 +53,8 @@
     [Parameter]
     public EventCallback<bool> OnClose { get; set; }
 
+    private List<IntervalSet> _preloadedIntervalSets;
+
     bool playSound = false;
     string singleColumnCenter = "col-12 text-center d-flex justify-content-center my-3";
     HowlerJsAudioPlayerInterop HowlerJsAudioPlayerInterop = new HowlerJsAudioPlayerInterop();
@@ -62,7 +66,7 @@
     {
         if (firstRender)
         {
-            
+            _preloadedIntervalSets = await PreloadedIntervalSetsClient.GetPreloadIntervalSets();
             // https://github.com/soend/BlazorAudioPlayer
             // https://stackoverflow.com/questions/64459271/how-can-you-play-a-recorded-audio-blob-on-the-client-side-using-howler-js
             int trackId = 0;

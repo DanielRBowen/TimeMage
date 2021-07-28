@@ -1,5 +1,7 @@
 ﻿@page "/intervaltimers"
 @inject TimeMageState TimeMageState
+@inject PreloadedIntervalSetsClient PreloadedIntervalSetsClient
+@using System.Text.Json
 
 @if (isEditing)
 {
@@ -41,6 +43,8 @@ else
                     </div>
                 </div>
             }
+
+            <DownloadButton Payload="@JsonSerializer.Serialize(IntervalSets)" Type="application/json" FileName="IntervalSets.json">Get JSON</DownloadButton>
         }
         else
         {
@@ -64,9 +68,14 @@ else
     {
         await TimeMageState.LoadAsync();
 
-        if (IntervalSets.Any(intervalSet => intervalSet.Name == "Fat Burn") == false)
+        //var preloadedIntervalSets = PreloadedIntervalSets.IntervalSets;
+        var preloadedIntervalSets = await PreloadedIntervalSetsClient.GetPreloadIntervalSets();
+        foreach (var preloadedIntervalSet in preloadedIntervalSets)
         {
-            IntervalSets.Add(PreloadedIntervalSets.FatBurn);
+            if (preloadedIntervalSet != null && IntervalSets.Any(intervalSet => intervalSet.Name == preloadedIntervalSet.Name) == false)
+            {
+                IntervalSets.Add(preloadedIntervalSet);
+            }
         }
     }
 

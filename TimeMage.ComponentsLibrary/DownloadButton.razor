@@ -1,0 +1,56 @@
+﻿@using Microsoft.JSInterop;
+@inject IJSRuntime JS
+
+@if (string.IsNullOrWhiteSpace(Payload))
+{
+    <a role="button" style="cursor: pointer;" @onclick="@Download" class="@ButtonClass">@ChildContent</a>
+}
+else
+{
+    <a role="button" style="cursor: pointer;" @onclick="@OnClicked" class="@ButtonClass">@ChildContent</a>
+}
+
+@code {
+    private async Task OnClicked() => await JS.InvokeAsync<string>("msSaveBlob", new string[] { Payload, IsEncoded.ToString(), FileName, Type });
+
+    // Content output between <a> child content </a>
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+
+    [Parameter]
+    public EventCallback<MouseEventArgs> RequestData { get; set; }
+
+    [Parameter]
+    public string ButtonClass { get; set; } = "btn btn-primary text-light";
+
+    /// <summary>
+    /// Gets or Sets the data to be downloaded by the client.
+    /// </summary>
+    [Parameter]
+    public string Payload { get; set; }
+
+    /// <summary>
+    /// Gets or Sets the specified file name.
+    /// </summary>
+    [Parameter]
+    public string FileName { get; set; }
+
+    /// <summary>
+    /// Gets or Sets the specified file type.
+    /// </summary>
+    [Parameter]
+    public string Type { get; set; } = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+
+    [Parameter]
+    public bool IsEncoded { get; set; } = false;
+
+    private async Task Download()
+    {
+        await RequestData.InvokeAsync();
+
+        if (string.IsNullOrWhiteSpace(Payload) == false)
+        {
+            await JS.InvokeAsync<string>("msSaveBlob", new string[] { Payload, IsEncoded.ToString(), FileName, Type });
+        }
+    }
+}

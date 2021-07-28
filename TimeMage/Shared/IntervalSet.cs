@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace TimeMage.Shared
 {
-    public class IntervalSet
+    public class IntervalSet : IGuidedIntervalSet
     {
         public string Name { get; set; } = "Name";
 
@@ -49,6 +49,8 @@ namespace TimeMage.Shared
         {
             get { return _currentTimerLeft; }
         }
+
+        public string GuideUrl { get; set; }
 
         protected virtual void Finished(EventArgs e)
         {
