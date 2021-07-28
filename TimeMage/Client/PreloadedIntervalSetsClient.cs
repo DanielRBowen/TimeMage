@@ -21,11 +21,12 @@ namespace TimeMage.Client
             _httpClient = httpClient;
         }
 
-        public async Task<List<IntervalSet>> GetPreloadIntervalSets()
+        public async Task<List<IntervalSet>> GetPreloadedIntervalSets()
         {
             var preloadedIntervalSets = await _httpClient.GetFromJsonAsync<List<IntervalSet>>("PreloadedIntervalSets/GetPreloadedIntervalSets");
-            //var preloadedIntervalSets = System.Text.Json.JsonSerializer.Deserialize<List<IntervalSet>>(preloadedIntervalSetsString);
             return preloadedIntervalSets;
         }
-    }
+
+		public List<IntervalSet> PreloadedIntervalSets { get; private set; }
+	}
 }

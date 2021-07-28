@@ -67,9 +67,8 @@ else
     protected override async Task OnInitializedAsync()
     {
         await TimeMageState.LoadAsync();
+        var preloadedIntervalSets = await PreloadedIntervalSetsClient.GetPreloadedIntervalSets();
 
-        //var preloadedIntervalSets = PreloadedIntervalSets.IntervalSets;
-        var preloadedIntervalSets = await PreloadedIntervalSetsClient.GetPreloadIntervalSets();
         foreach (var preloadedIntervalSet in preloadedIntervalSets)
         {
             if (preloadedIntervalSet != null && IntervalSets.Any(intervalSet => intervalSet.Name == preloadedIntervalSet.Name) == false)
