@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -8,15 +8,14 @@
     <base href="/" />
     <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
     <link href="css/app.css" rel="stylesheet" />
+    <link href="TimeMage.Client.styles.css" rel="stylesheet" />
     <link href="manifest.json" rel="manifest" />
     <link rel="apple-touch-icon" sizes="512x512" href="icon-512.png" />
-    <meta name="abstract" content="https://www.icoconverter.com/" />
+    <link rel="apple-touch-icon" sizes="192x192" href="icon-192.png" />
 </head>
 
 <body>
-    <app>
-        <div class="loading-bar"></div>
-    </app>
+    <div id="app">Loading...</div>
 
     <div id="blazor-error-ui">
         An unhandled error has occurred.
@@ -26,6 +25,8 @@
     <script src="_framework/blazor.webassembly.js"></script>
     <script src="_content/TimeMage.ComponentsLibrary/playAudio.js"></script>
     <script src="_content/TimeMage.ComponentsLibrary/localStorage.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/howler@2.1.2/dist/howler.min.js"></script>
+    <script src="_content/BlazorAudioPlayer/js/HowlerJsAudioPlayer.js"></script>
     <script>navigator.serviceWorker.register('service-worker.js');</script>
 </body>
 

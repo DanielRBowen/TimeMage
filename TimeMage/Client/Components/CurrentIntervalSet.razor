@@ -1,4 +1,5 @@
-﻿@inject IJSRuntime JS
+﻿@using BlazorAudioPlayer.Models
+@inject IJSRuntime JS
 @inject SpeechToTextClient SpeechToTextClient
 <button type="button" class="btn btn-outline-primary" @onclick="() => OnClose.InvokeAsync(true)">Close</button>
 
@@ -52,6 +53,35 @@
 
     bool playSound = false;
     string singleColumnCenter = "col-12 text-center d-flex justify-content-center my-3";
+    HowlerJsAudioPlayerInterop HowlerJsAudioPlayerInterop = new HowlerJsAudioPlayerInterop();
+    protected List<PlaylistItem> Playlist = new List<PlaylistItem>();
+    protected Dictionary<string, int> IntervalNameTrackIds = new();
+
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            
+            // https://github.com/soend/BlazorAudioPlayer
+            // https://stackoverflow.com/questions/64459271/how-can-you-play-a-recorded-audio-blob-on-the-client-side-using-howler-js
+            int trackId = 0;
+
+            foreach (var interval in IntervalSet.Intervals)
+            {
+                if (!IntervalNameTrackIds.Any(pair => pair.Key == interval.Name))
+                {
+                    byte[] audioData = await SpeechToTextClient.GetSpeech(interval.Name);
+                    string audioUrl = $"data:audio/wav;base64,{Convert.ToBase64String(audioData)}";
+                    Playlist.Add(new PlaylistItem(trackId, interval.Name, audioUrl));
+                    IntervalNameTrackIds.Add(interval.Name, trackId);
+                    trackId++;
+                }
+            }
+
+            await HowlerJsAudioPlayerInterop.CreateAudioPlayer(JS, Playlist);
+        }
+    }
 
     protected override void OnInitialized()
     {
@@ -100,12 +130,17 @@
 
     private async Task SayIntervalName()
     {
-        byte[] audioData = await SpeechToTextClient.GetSpeech(IntervalSet.CurrentIntervalName);
-
-        if (audioData != null)
+        if (IntervalNameTrackIds.TryGetValue(IntervalSet.CurrentIntervalName, out int trackId))
         {
-            await Audio.Play(JS, audioData);
-            StateHasChanged();
+            var howlerJsState = await HowlerJsAudioPlayerInterop.Play(JS, trackId);
         }
+
+        //byte[] audioData = await SpeechToTextClient.GetSpeech(IntervalSet.CurrentIntervalName);
+
+        //if (audioData != null)
+        //{
+            //await Audio.Play(JS, audioData);
+        //    StateHasChanged();
+        //}
     }
 }
