@@ -19,7 +19,7 @@ namespace TimeMage.Server.Controllers
             try
             {
                 var preloadedIntervalSetsString = System.IO.File.ReadAllText("IntervalSets.json");
-                var preloadedIntervalSets = System.Text.Json.JsonSerializer.Deserialize<List<IntervalSet>>(preloadedIntervalSetsString);
+                var preloadedIntervalSets = System.Text.Json.JsonSerializer.Deserialize<IList<IntervalSet>>(preloadedIntervalSetsString);
                 return Ok(preloadedIntervalSets);
             }
             catch (Exception ex)

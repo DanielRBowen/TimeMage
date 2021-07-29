@@ -23,10 +23,9 @@ namespace TimeMage.Client
 
         public async Task<List<IntervalSet>> GetPreloadedIntervalSets()
         {
-            var preloadedIntervalSets = await _httpClient.GetFromJsonAsync<List<IntervalSet>>("PreloadedIntervalSets/GetPreloadedIntervalSets");
-            return preloadedIntervalSets;
+            //var preloadedIntervalSets = await _httpClient.GetFromJsonAsync<List<IntervalSet>>("PreloadedIntervalSets/GetPreloadedIntervalSets");
+            var preloadedIntervalSets = await _httpClient.GetFromJsonAsync<List<IntervalSet>>("IntervalSets.json"); // https://www.syncfusion.com/faq/blazor/web-api/how-do-i-read-a-json-file-in-blazor-webassembly
+            return PreloadedIntervalSets.IntervalSets; // Just get the interval sets from memory because the Json Deserialization isn't working.
         }
-
-		public List<IntervalSet> PreloadedIntervalSets { get; private set; }
 	}
 }
