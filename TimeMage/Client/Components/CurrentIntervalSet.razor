@@ -5,45 +5,52 @@
 
 <button type="button" class="btn btn-outline-primary" @onclick="() => Close()">Close</button>
 
-<div class="text-center justify-content-center">
-    <div class="row"><h5 class="col-12">@IntervalSet.Name</h5></div>
+@if (_isLoading)
+{
+    <div class="loading-bar"></div>
+}
+else
+{
+    <div class="text-center justify-content-center">
+        <div class="row"><h5 class="col-12">@IntervalSet.Name</h5></div>
 
-    @if (IntervalSet.IsTimerRunning)
-    {
+        @if (IntervalSet.IsTimerRunning)
+        {
 
-        <h2 class="@singleColumnCenter">Time: @IntervalSet.TotalTimeLeft</h2>
+            <h2 class="@singleColumnCenter">Time: @IntervalSet.TotalTimeLeft</h2>
 
-        <h5 class="@singleColumnCenter">Current Interval: @IntervalSet.CurrentIntervalName</h5>
+            <h5 class="@singleColumnCenter">Current Interval: @IntervalSet.CurrentIntervalName</h5>
 
-        <h3 class="@singleColumnCenter">Interval Time Left: @IntervalSet.CurrentTimerLeft</h3>
+            <h3 class="@singleColumnCenter">Interval Time Left: @IntervalSet.CurrentTimerLeft</h3>
 
-        <button type="button" class="@singleColumnCenter btn btn-outline-danger" @onclick="() => Stop()">
-            <span class="oi oi-media-stop m-2 pointer" aria-hidden="true"></span>
-        </button>
-    }
-    else
-    {
-        <h2 class="@singleColumnCenter">@IntervalSet.TotalTime</h2>
+            <button type="button" class="@singleColumnCenter btn btn-outline-danger" @onclick="() => Stop()">
+                <span class="oi oi-media-stop m-2 pointer" aria-hidden="true"></span>
+            </button>
+        }
+        else
+        {
+            <h2 class="@singleColumnCenter">@IntervalSet.TotalTime</h2>
 
-        <button type="button" class="@singleColumnCenter btn btn-outline-primary" @onclick="() => IntervalSet.Start()">
-            <span class="oi oi-media-play m-2 pointer" aria-hidden="true"></span>
-        </button>
-    }
+            <button type="button" class="@singleColumnCenter btn btn-outline-primary" @onclick="() => IntervalSet.Start()">
+                <span class="oi oi-media-play m-2 pointer" aria-hidden="true"></span>
+            </button>
+        }
 
-    @if (_preloadedIntervalSets.Any(intervalSet => intervalSet.Name == IntervalSet.Name))
-    {
-        <div class="@singleColumnCenter">
-            <a href="@IntervalSet.GuideUrl" target="_blank">Guide</a>
-        </div>
-    }
+        @if (_preloadedIntervalSets.Any(intervalSet => intervalSet.Name == IntervalSet.Name))
+        {
+            <div class="@singleColumnCenter">
+                <a href="@IntervalSet.GuideUrl" target="_blank">Guide</a>
+            </div>
+        }
 
-    @if (playSound)
-    {
-        <audio hidden loop autoplay>
-            <source src="sounds/ding.wav" />
-        </audio>
-    }
-</div>
+        @if (playSound)
+        {
+            <audio hidden loop autoplay>
+                <source src="sounds/ding.wav" />
+            </audio>
+        }
+    </div>
+}
 
 @code {
 
@@ -53,6 +60,7 @@
     [Parameter]
     public EventCallback<bool> OnClose { get; set; }
 
+    private bool _isLoading = true;
     bool playSound = false;
     string singleColumnCenter = "col-12 text-center d-flex justify-content-center my-3";
     HowlerJsAudioPlayerInterop HowlerJsAudioPlayerInterop = new HowlerJsAudioPlayerInterop();
@@ -64,6 +72,7 @@
     {
         if (firstRender)
         {
+            _isLoading = true;
             // https://github.com/soend/BlazorAudioPlayer
             // https://stackoverflow.com/questions/64459271/how-can-you-play-a-recorded-audio-blob-on-the-client-side-using-howler-js
             int trackId = 0;
@@ -81,6 +90,8 @@
             }
 
             await HowlerJsAudioPlayerInterop.CreateAudioPlayer(JS, Playlist);
+            _isLoading = false;
+            StateHasChanged();
         }
     }
 
@@ -141,7 +152,7 @@
 
         //if (audioData != null)
         //{
-            //await Audio.Play(JS, audioData);
+        //await Audio.Play(JS, audioData);
         //    StateHasChanged();
         //}
     }
