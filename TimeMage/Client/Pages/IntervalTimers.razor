@@ -44,7 +44,7 @@ else
                 </div>
             }
 
-            <DownloadButton Payload="@JsonSerializer.Serialize(IntervalSets)" Type="application/json" FileName="IntervalSets.json">Get JSON</DownloadButton>
+            <DownloadButton Payload="@JsonSerializedIntervalSets" Type="application/json" FileName="IntervalSets.json">Get JSON</DownloadButton>
         }
         else
         {
@@ -63,6 +63,21 @@ else
     private IntervalSet EditIntervalSet;
 
     private IntervalSet CurrentIntervalSet;
+
+    public string JsonSerializedIntervalSets 
+    {
+        get
+        {
+            if (IntervalSets == null || IntervalSets.Any() == false)
+            {
+                return string.Empty;
+            }
+
+            JsonSerializerOptions jsonSerializerOptions = new();
+			jsonSerializerOptions.Converters.Add(new TimeSpanConverter());
+            return JsonSerializer.Serialize(IntervalSets, jsonSerializerOptions);
+        }
+    }
 
     protected override async Task OnInitializedAsync()
     {

@@ -1,23 +1,32 @@
 ﻿using System;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace TimeMage.Shared
 {
     public class TmTimer
     {
+        /// <summary>
+        /// Use JsonInclude property
+        /// https://dev.to/j_sakamoto/c-some-scenarios-for-deserializing-a-json-to-a-type-with-read-only-properties-by-system-text-json-3lc
+        /// </summary>
+        [JsonInclude]
         public string Name { get; set; } = "Timer";
 
+		[JsonInclude]
         public TimeSpan Time { get; set; } = new TimeSpan(0, 5, 0);
 
         private TimeSpan _timeLeft;
 
+        [JsonIgnore]
         public TimeSpan TimeLeft
         {
             get { return _timeLeft; }
         }
-
+       
         private bool _isTimerStopping;
 
+        [JsonIgnore]
         public bool IsTimerStopping
         {
             get { return _isTimerStopping; }
@@ -25,6 +34,7 @@ namespace TimeMage.Shared
 
         private bool _isTimerRunning;
 
+        [JsonIgnore]
         public bool IsTimerRunning
         {
             get { return _isTimerRunning; }

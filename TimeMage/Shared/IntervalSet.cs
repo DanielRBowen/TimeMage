@@ -1,16 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace TimeMage.Shared
 {
     public class IntervalSet : IGuidedIntervalSet
     {
+        [JsonInclude]
         public string Name { get; set; } = "Name";
 
+        [JsonInclude]
         public List<TmTimer> Intervals { get; set; } = new List<TmTimer>();
 
+        [JsonInclude]
         public TimeSpan TotalTime
         {
             get
@@ -20,8 +24,10 @@ namespace TimeMage.Shared
                 return totalTime;
             }
         }
+
         private bool _isTimerRunning;
 
+        [JsonIgnore]
         public bool IsTimerRunning
         {
             get { return _isTimerRunning; }
@@ -31,6 +37,7 @@ namespace TimeMage.Shared
 
         private string _currentIntervalName;
 
+        [JsonIgnore]
         public string CurrentIntervalName
         {
             get { return _currentIntervalName; }
@@ -38,6 +45,7 @@ namespace TimeMage.Shared
 
         private TimeSpan _totalTimeLeft;
 
+        [JsonIgnore]
         public TimeSpan TotalTimeLeft
         {
             get { return _totalTimeLeft; }
@@ -45,11 +53,13 @@ namespace TimeMage.Shared
 
         private TimeSpan _currentTimerLeft;
 
+        [JsonIgnore]
         public TimeSpan CurrentTimerLeft
         {
             get { return _currentTimerLeft; }
         }
 
+        [JsonInclude]
         public string GuideUrl { get; set; }
 
         protected virtual void Finished(EventArgs e)
