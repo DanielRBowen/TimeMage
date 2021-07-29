@@ -3,7 +3,7 @@
 @inject SpeechToTextClient SpeechToTextClient
 @inject PreloadedIntervalSetsClient PreloadedIntervalSetsClient
 
-<button type="button" class="btn btn-outline-primary" @onclick="() => OnClose.InvokeAsync(true)">Close</button>
+<button type="button" class="btn btn-outline-primary" @onclick="() => Close()">Close</button>
 
 <div class="text-center justify-content-center">
     <div class="row"><h5 class="col-12">@IntervalSet.Name</h5></div>
@@ -17,7 +17,7 @@
 
         <h3 class="@singleColumnCenter">Interval Time Left: @IntervalSet.CurrentTimerLeft</h3>
 
-        <button type="button" class="@singleColumnCenter btn btn-outline-danger" @onclick="() => IntervalSet.Stop()">
+        <button type="button" class="@singleColumnCenter btn btn-outline-danger" @onclick="() => Stop()">
             <span class="oi oi-media-stop m-2 pointer" aria-hidden="true"></span>
         </button>
     }
@@ -144,5 +144,21 @@
             //await Audio.Play(JS, audioData);
         //    StateHasChanged();
         //}
+    }
+
+    private async Task Close()
+    {
+        await Stop();
+        await OnClose.InvokeAsync(true);
+    }
+
+    private async Task Stop()
+    {
+        if (!string.IsNullOrWhiteSpace(IntervalSet?.CurrentIntervalName) && IntervalNameTrackIds.TryGetValue(IntervalSet.CurrentIntervalName, out int trackId))
+        {
+            await HowlerJsAudioPlayerInterop.Stop(JS, trackId);
+        }
+
+        IntervalSet.Stop();
     }
 }
