@@ -1,6 +1,6 @@
 {
-  "name": "TimeMage",
-  "short_name": "TimeMage",
+  "name": "Time Mage",
+  "short_name": "Time Mage",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#ffffff",
