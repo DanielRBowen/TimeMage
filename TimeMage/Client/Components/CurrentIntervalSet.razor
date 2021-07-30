@@ -91,6 +91,7 @@ else
 
             await HowlerJsAudioPlayerInterop.CreateAudioPlayer(JS, Playlist);
             _isLoading = false;
+            await NoSleep.Enable(JS);
             StateHasChanged();
         }
     }
@@ -170,6 +171,7 @@ else
             await HowlerJsAudioPlayerInterop.Stop(JS, trackId);
         }
 
+        await NoSleep.Disable(JS);
         IntervalSet.Stop();
     }
 }
