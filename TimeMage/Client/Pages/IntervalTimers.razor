@@ -14,7 +14,7 @@ else if (isCurrentIntervalDisplayed)
 }
 else
 {
-    <button type="button" @onclick="Add"><span class="oi oi-plus" aria-hidden="true"></span></button>
+    <button type="button" @onclick="async () => await Add()"><span class="oi oi-plus" aria-hidden="true"></span></button>
 
     <div class="text-center justify-content-center">
         @if (IntervalSets.Any())
@@ -32,7 +32,7 @@ else
                         </div>
                     }
                     <div class="col-3">
-                        <button type="button" class="btn btn-outline-danger" @onclick="() => Delete(intervalSet)">
+                        <button type="button" class="btn btn-outline-danger" @onclick="async () => await Delete(intervalSet)">
                             <span class="oi oi-trash" aria-hidden="true"></span>
                         </button>
                     </div>
@@ -93,27 +93,27 @@ else
         }
     }
 
-    public void Add()
+    public async Task Add()
     {
         IntervalSets.Add(new IntervalSet());
-        TimeMageState.SaveAsync();
+        await TimeMageState.SaveAsync();
     }
 
-    public void DoneEdit(bool done)
+    public async Task DoneEdit(bool done)
     {
         isEditing = !done;
-        TimeMageState.SaveAsync();
+        await TimeMageState.SaveAsync();
     }
 
-    public void CloseCurrent(bool closed)
+    public async Task CloseCurrent(bool closed)
     {
         isCurrentIntervalDisplayed = !closed;
-        TimeMageState.SaveAsync();
+        await TimeMageState.SaveAsync();
     }
 
-    public void Delete(IntervalSet intervalSet)
+    public async Task Delete(IntervalSet intervalSet)
     {
         IntervalSets.Remove(intervalSet);
-        TimeMageState.SaveAsync();
+        await TimeMageState.SaveAsync();
     }
 }
