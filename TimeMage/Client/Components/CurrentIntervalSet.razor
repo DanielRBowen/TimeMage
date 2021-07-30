@@ -23,7 +23,7 @@ else
 
             <h3 class="@singleColumnCenter">Interval Time Left: @IntervalSet.CurrentTimerLeft</h3>
 
-            <button type="button" class="@singleColumnCenter btn btn-outline-danger" @onclick="() => Stop()">
+            <button type="button" class="@singleColumnCenter btn btn-outline-danger" @onclick="async() => await Stop()">
                 <span class="oi oi-media-stop m-2 pointer" aria-hidden="true"></span>
             </button>
         }
@@ -31,7 +31,7 @@ else
         {
             <h2 class="@singleColumnCenter">@IntervalSet.TotalTime</h2>
 
-            <button type="button" class="@singleColumnCenter btn btn-outline-primary" @onclick="() => IntervalSet.Start()">
+            <button type="button" class="@singleColumnCenter btn btn-outline-primary" @onclick="async() => await Start()">
                 <span class="oi oi-media-play m-2 pointer" aria-hidden="true"></span>
             </button>
         }
@@ -91,7 +91,6 @@ else
 
             await HowlerJsAudioPlayerInterop.CreateAudioPlayer(JS, Playlist);
             _isLoading = false;
-            await NoSleep.Enable(JS);
             StateHasChanged();
         }
     }
@@ -162,6 +161,12 @@ else
     {
         await Stop();
         await OnClose.InvokeAsync(true);
+    }
+
+    private async Task Start()
+    {
+        await NoSleep.Enable(JS);
+        IntervalSet.Start();
     }
 
     private async Task Stop()
