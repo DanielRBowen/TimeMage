@@ -1,0 +1,147 @@
+﻿
+<input class="row my-2" min="@MinSeconds" max="86399" type="range" @bind-value="@TotalSeconds"/>
+
+<div class="row my-2">
+    @switch (_selectedTimePart)
+    {
+        case TimePart.Seconds:
+            <input type="range" min="@MinSeconds" max="59" @bind-value="@Seconds"/>
+            break;
+         case TimePart.Minutes:
+            <input type="range" max="59" @bind-value="@Minutes"/>
+            break;
+         case TimePart.Hours:
+            <input type="range" max="23" @bind-value="@Hours"/>
+            break;
+        default:
+            break;
+    }
+</div>
+
+
+<div class="row my-2">
+    <div @onclick="() => TimePartSelected(TimePart.Hours)">@_hours.ToString("00")</div>:
+    <div @onclick="() => TimePartSelected(TimePart.Minutes)">@_minutes.ToString("00")</div>:
+    <div @onclick="() => TimePartSelected(TimePart.Seconds)">@Seconds.ToString("00")</div>
+</div>
+
+@code {
+    private enum TimePart
+    {
+        Seconds,
+        Minutes,
+        Hours
+    }
+
+    [Parameter]
+    public int MinSeconds { get; set; } = 10;
+
+    [Parameter]
+    public TimeSpan SelectedTime { get; set; } = new TimeSpan();
+
+    [Parameter]
+    public EventCallback<TimeSpan> SelectedTimeChanged { get; set; }
+
+    private TimePart _selectedTimePart = TimePart.Seconds;
+
+    private int _seconds = 10;
+
+    public int Seconds
+    {
+        get
+        {
+            return _seconds;
+        }        set
+        {
+            if (value != _seconds)
+            {
+                _seconds = value;
+                SelectedTime = new TimeSpan(_hours, _minutes, _seconds);
+                _totalSeconds = SelectedTime.TotalSeconds;
+                StateHasChanged();
+            }
+        }
+    }
+
+    private int _minutes = 0;
+
+    public int Minutes
+    {
+        get
+        {
+            return _minutes;
+        }
+
+        set
+        {
+            if (value != _minutes)
+            {
+                _minutes = value;
+                SelectedTime = new TimeSpan(_hours, _minutes, _seconds);
+                _totalSeconds = SelectedTime.TotalSeconds;
+                StateHasChanged();
+            }
+        }
+    }
+
+    private int _hours = 0;
+
+    public int Hours
+    {
+        get
+        {
+            return _hours;
+        }
+
+        set
+        {
+            if (value != _hours)
+            {
+                _hours = value;
+                SelectedTime = new TimeSpan(_hours, _minutes, _seconds);
+                _totalSeconds = SelectedTime.TotalSeconds;
+                StateHasChanged();
+            }
+        }
+    }
+
+    private double _totalSeconds = 0;
+
+    public double TotalSeconds
+    {
+        get
+        {
+            return _totalSeconds;
+        }
+
+        set
+        {
+            if (value != _totalSeconds)
+            {
+                _totalSeconds = value;
+                SelectedTime = TimeSpan.FromSeconds(_totalSeconds);
+                _seconds = SelectedTime.Seconds;
+                _minutes = SelectedTime.Minutes;
+                _hours = SelectedTime.Hours;
+                StateHasChanged();
+            }
+        }
+    }
+
+    protected override void OnInitialized()
+    {
+        if (SelectedTime != TimeSpan.Zero)
+        {
+            _seconds = SelectedTime.Seconds;
+            _minutes = SelectedTime.Minutes;
+            _hours = SelectedTime.Hours;
+            _totalSeconds = SelectedTime.TotalSeconds;
+            StateHasChanged();
+        }
+    }
+
+    private void TimePartSelected(TimePart timePart)
+    {
+        _selectedTimePart = timePart;
+    }
+}

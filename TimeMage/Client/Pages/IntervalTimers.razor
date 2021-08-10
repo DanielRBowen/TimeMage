@@ -3,10 +3,11 @@
 @inject PreloadedIntervalSetsClient PreloadedIntervalSetsClient
 @using System.Text.Json
 
+<TimeMageTimeSelector></TimeMageTimeSelector>
+
 @if (isEditing)
 {
     <EditIntervalSet IntervalSet="EditIntervalSet" OnDone="DoneEdit"></EditIntervalSet>
-
 }
 else if (isCurrentIntervalDisplayed)
 {
@@ -52,6 +53,8 @@ else
         }
     </div>
 }
+
+<div style="width:500px;height:200px;"></div>
 
 @code {
     bool isEditing = false;
