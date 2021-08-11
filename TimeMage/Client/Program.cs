@@ -1,4 +1,5 @@
 using Blazored.LocalStorage;
+using BlazorStrap;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -24,6 +25,8 @@ namespace TimeMage.Client
 			builder.Services.AddScoped<TimeMageState>();
 			builder.Services.AddBlazoredLocalStorage(config =>
 				config.JsonSerializerOptions.WriteIndented = true);
+
+			builder.Services.AddBootstrapCss();
 
 			await builder.Build().RunAsync();
 		}

@@ -1,5 +1,8 @@
 ﻿/* https://freebiesupply.com/blog/css-arrows/ */
 /* CSS Skewed Arrow */
+.text-size {
+    font-size:x-large
+}
 
 ul {
     margin: 1.5em 2em 1em;

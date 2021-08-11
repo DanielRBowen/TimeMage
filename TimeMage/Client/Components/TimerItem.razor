@@ -7,9 +7,9 @@
         <div class="col-1">
             <button type="button" class="btn btn-outline-danger" @onclick="() => OnDelete.InvokeAsync(Timer)"><span class="oi oi-trash" aria-hidden="true"></span></button>
         </div>
-        <div class="col-9">
-            <input type="text" class="form-control" aria-label="Name" @bind-value="Timer.Name" placeholder="Name" maxlength="34">
-            <input type="text" class="form-control" aria-label="Time" @bind-value="Timer.Time">
+        <div class="col-9" @onclick="EditTimer">
+            <div class="row">@Timer.Name</div>
+            <div class="row">@Timer.Time</div>
         </div>
     }
     else
@@ -55,6 +55,21 @@
     </div>
 </div>
 
+<BSModal @ref="_editTimerModal">
+    <BSModalBody Class="container">
+        <form>
+            <div class="form-group">
+                <input type="text" class="form-control" aria-label="Name" @bind-value="Timer.Name" placeholder="Name" maxlength="34">
+                <TimeMageTimeSelector @bind-SelectedTime="Timer.Time"></TimeMageTimeSelector>
+			</div>
+		</form>
+
+	</BSModalBody>
+    <BSModalFooter>
+        <BSButton Color="Color.Light" @onclick="() => _editTimerModal.Hide()">Done</BSButton>
+	</BSModalFooter>
+</BSModal>
+
 @code {
     bool playSound = false;
     [Parameter]
@@ -65,6 +80,13 @@
     public EventCallback<TmTimer> OnDelete { get; set; }
     [Parameter]
     public EventCallback<TmTimer> OnDuplicate { get; set; }
+
+    private BSModal _editTimerModal;
+
+    public void EditTimer()
+    {
+        _editTimerModal.Show();
+    }
 
     protected override void OnInitialized()
     {

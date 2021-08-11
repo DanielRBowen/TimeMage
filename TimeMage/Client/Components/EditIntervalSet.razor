@@ -1,4 +1,4 @@
-﻿<button type="button" @onclick="Add"><span class="oi oi-plus" aria-hidden="true"></span></button>
+﻿<button type="button" @onclick="OpenNewTimerModal"><span class="oi oi-plus" aria-hidden="true"></span></button>
 <button type="button" class="btn btn-outline-primary" @onclick="() => OnDone.InvokeAsync(true)">Done</button>
 <input type="text" class="form-control m-3" aria-label="Name" @bind-value="IntervalSet.Name" placeholder="Name">
 
@@ -11,8 +11,23 @@
 }
 else
 {
-<div>There are no intervals to display.</div>
+    <div>There are no intervals to display.</div>
 }
+
+<BSModal @ref="_newTimerModal">
+    <BSModalBody Class="container">
+        <form>
+            <div class="form-group">
+                <input type="text" class="form-control" aria-label="Name" @bind-value="_newTimer.Name" placeholder="Name" maxlength="34">
+                <TimeMageTimeSelector @bind-SelectedTime="_newTimer.Time"></TimeMageTimeSelector>
+			</div>
+		</form>
+
+	</BSModalBody>
+    <BSModalFooter>
+        <BSButton Color="Color.Light" @onclick="Add">Add</BSButton>
+	</BSModalFooter>
+</BSModal>
 
 @code {
     [Parameter]
@@ -21,6 +36,10 @@ else
     [Parameter]
     public EventCallback<bool> OnDone { get; set; }
 
+    private BSModal _newTimerModal;
+
+    private TmTimer _newTimer = new TmTimer { Name = "Mountain Climbers", Time = new TimeSpan(0, 0, 10) };
+
     protected override void OnInitialized()
     {
         IntervalSet.Stop();
@@ -28,7 +47,8 @@ else
 
     public void Add()
     {
-        IntervalSet.Intervals.Add(new TmTimer { Name = "Mountain Climbers", Time = new TimeSpan(0, 0, 10) });
+        IntervalSet.Intervals.Add(_newTimer);
+        _newTimerModal.Hide();
     }
 
     public void Delete(TmTimer interval)
@@ -39,5 +59,11 @@ else
     public void Duplicate(TmTimer interval)
     {
         IntervalSet.Intervals.Add(new TmTimer { Name = interval.Name, Time = interval.Time });
+    }
+
+    private void OpenNewTimerModal()
+    {
+        _newTimer = new TmTimer { Name = "Mountain Climbers", Time = new TimeSpan(0, 0, 10) };
+        _newTimerModal.Show();
     }
 }

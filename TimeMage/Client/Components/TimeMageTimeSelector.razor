@@ -1,43 +1,45 @@
 ﻿
-@if (EnableTotalSecondsSlider)
-{
-    <input class="row my-2" min="@MinSeconds" max="86399" type="range" @bind-value="@TotalSeconds"/>
-}
-
-<div class="row my-2">
-    @switch (_selectedTimePart)
+<div class="my-3 container">
+    @if (EnableTotalSecondsSlider)
     {
-        case TimePart.Seconds:
-            <div class="row">
-                <span class="arrow arrow-left" @onclick="() => Seconds--"></span>
-                <input type="range" max="59" @bind-value="@Seconds"/>
-                <span class="arrow arrow-right" @onclick="() => Seconds++"></span>
-             </div>
-            break;
-         case TimePart.Minutes:
-             <div class="row">
-                <span class="arrow arrow-left" @onclick="() => Minutes--"></span>
-                <input type="range" max="59" @bind-value="@Minutes"/>
-                <span class="arrow arrow-right" @onclick="() => Minutes++"></span>
-             </div>
-            break;
-         case TimePart.Hours:
-             <div class="row">
-                <span class="arrow arrow-left" @onclick="() => Hours--"></span>
-                <input type="range" max="23" @bind-value="@Hours"/>
-                <span class="arrow arrow-right" @onclick="() => Hours++"></span>
-             </div>
-            break;
-        default:
-            break;
+        <input class="row my-2 d-flex justify-content-center" min="@MinSeconds" max="86399" type="range" @bind-value="@TotalSeconds"/>
     }
-</div>
+
+    <div class="my-2 d-flex justify-content-center">
+        @switch (_selectedTimePart)
+        {
+            case TimePart.Seconds:
+                <div class="row">
+                    <span class="arrow arrow-left" @onclick="() => Seconds--"></span>
+                    <input type="range" max="59" @bind-value="@Seconds"/>
+                    <span class="arrow arrow-right" @onclick="() => Seconds++"></span>
+                 </div>
+                break;
+             case TimePart.Minutes:
+                 <div class="row">
+                    <span class="arrow arrow-left" @onclick="() => Minutes--"></span>
+                    <input type="range" max="59" @bind-value="@Minutes"/>
+                    <span class="arrow arrow-right" @onclick="() => Minutes++"></span>
+                 </div>
+                break;
+             case TimePart.Hours:
+                 <div class="row">
+                    <span class="arrow arrow-left" @onclick="() => Hours--"></span>
+                    <input type="range" max="23" @bind-value="@Hours"/>
+                    <span class="arrow arrow-right" @onclick="() => Hours++"></span>
+                 </div>
+                break;
+            default:
+                break;
+        }
+    </div>
 
 
-<div class="row my-2">
-    <div @onclick="() => TimePartSelected(TimePart.Hours)" style="@TimePartStyle(TimePart.Hours)">@Hours.ToString("00")</div>:
-    <div @onclick="() => TimePartSelected(TimePart.Minutes)"  style="@TimePartStyle(TimePart.Minutes)">@Minutes.ToString("00")</div>:
-    <div @onclick="() => TimePartSelected(TimePart.Seconds)"  style="@TimePartStyle(TimePart.Seconds)">@Seconds.ToString("00")</div>
+    <div class="row my-2 d-flex justify-content-center text-size">
+        <span @onclick="() => TimePartSelected(TimePart.Hours)" style="@TimePartStyle(TimePart.Hours)">@Hours.ToString("00")</span>:
+        <span @onclick="() => TimePartSelected(TimePart.Minutes)"  style="@TimePartStyle(TimePart.Minutes)">@Minutes.ToString("00")</span>:
+        <span @onclick="() => TimePartSelected(TimePart.Seconds)"  style="@TimePartStyle(TimePart.Seconds)">@Seconds.ToString("00")</span>
+    </div>
 </div>
 
 @code {
@@ -72,7 +74,9 @@
         get
         {
             return _seconds;
-        }        set
+        }
+
+        set
         {
             if (value != _seconds)
             {
