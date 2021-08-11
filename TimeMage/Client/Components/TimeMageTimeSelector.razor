@@ -10,8 +10,8 @@
         {
             case TimePart.Seconds:
                 <div class="row">
-                    <span class="arrow arrow-left mx-3" @onclick="() => Seconds = DecrementValue(Seconds)"></span>
-                    <input type="range" max="59" @bind-value="@Seconds"/>
+                    <span class="arrow arrow-left mx-3" @onclick="() => Seconds = DecrementValue(Seconds, MinSeconds)"></span>
+                    <input type="range" min="@MinSeconds" max="59" @bind-value="@Seconds"/>
                     <span class="arrow arrow-right mx-3" @onclick="() => Seconds = IncrementValue(Seconds)"></span>
                  </div>
                 break;
