@@ -1,0 +1,66 @@
+﻿/* https://freebiesupply.com/blog/css-arrows/ */
+/* CSS Skewed Arrow */
+
+ul {
+    margin: 1.5em 2em 1em;
+    text-align: center;
+    list-style: none;
+}
+
+    ul + ul {
+        margin-top: -1em;
+    }
+
+    ul li {
+        display: inline-block;
+        margin: 40px;
+    }
+
+/* arrow common style */
+.arrow {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-top: 2px solid #000;
+    border-right: 2px solid #000;
+}
+
+.arrow-top {
+    transform: rotate(-45deg);
+}
+
+.arrow-right {
+    transform: rotate(45deg);
+}
+
+.arrow-bottom {
+    transform: rotate(135deg);
+}
+
+.arrow-left {
+    transform: rotate(-135deg);
+}
+
+.arrow-top-narrow {
+    transform: rotate(-45deg) skew(-15deg, -15deg);
+}
+
+.arrow-top-wide {
+    transform: rotate(-45deg) skew(7deg, 7deg);
+}
+
+.arrow-top-left {
+    transform: rotate(-90deg) skew(-10deg, -10deg);
+}
+
+.arrow-top-right {
+    transform: rotate(0) skew(-10deg, -10deg);
+}
+
+.arrow-bottom-left {
+    transform: rotate(180deg) skew(-10deg, -10deg);
+}
+
+.arrow-bottom-right {
+    transform: rotate(90deg) skew(-10deg, -10deg);
+}

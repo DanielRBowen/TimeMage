@@ -1,17 +1,32 @@
 ﻿
-<input class="row my-2" min="@MinSeconds" max="86399" type="range" @bind-value="@TotalSeconds"/>
+@if (EnableTotalSecondsSlider)
+{
+    <input class="row my-2" min="@MinSeconds" max="86399" type="range" @bind-value="@TotalSeconds"/>
+}
 
 <div class="row my-2">
     @switch (_selectedTimePart)
     {
         case TimePart.Seconds:
-            <input type="range" min="@MinSeconds" max="59" @bind-value="@Seconds"/>
+            <div class="row">
+                <span class="arrow arrow-left" @onclick="() => Seconds--"></span>
+                <input type="range" max="59" @bind-value="@Seconds"/>
+                <span class="arrow arrow-right" @onclick="() => Seconds++"></span>
+             </div>
             break;
          case TimePart.Minutes:
-            <input type="range" max="59" @bind-value="@Minutes"/>
+             <div class="row">
+                <span class="arrow arrow-left" @onclick="() => Minutes--"></span>
+                <input type="range" max="59" @bind-value="@Minutes"/>
+                <span class="arrow arrow-right" @onclick="() => Minutes++"></span>
+             </div>
             break;
          case TimePart.Hours:
-            <input type="range" max="23" @bind-value="@Hours"/>
+             <div class="row">
+                <span class="arrow arrow-left" @onclick="() => Hours--"></span>
+                <input type="range" max="23" @bind-value="@Hours"/>
+                <span class="arrow arrow-right" @onclick="() => Hours++"></span>
+             </div>
             break;
         default:
             break;
@@ -20,9 +35,9 @@
 
 
 <div class="row my-2">
-    <div @onclick="() => TimePartSelected(TimePart.Hours)">@_hours.ToString("00")</div>:
-    <div @onclick="() => TimePartSelected(TimePart.Minutes)">@_minutes.ToString("00")</div>:
-    <div @onclick="() => TimePartSelected(TimePart.Seconds)">@Seconds.ToString("00")</div>
+    <div @onclick="() => TimePartSelected(TimePart.Hours)" style="@TimePartStyle(TimePart.Hours)">@Hours.ToString("00")</div>:
+    <div @onclick="() => TimePartSelected(TimePart.Minutes)"  style="@TimePartStyle(TimePart.Minutes)">@Minutes.ToString("00")</div>:
+    <div @onclick="() => TimePartSelected(TimePart.Seconds)"  style="@TimePartStyle(TimePart.Seconds)">@Seconds.ToString("00")</div>
 </div>
 
 @code {
@@ -34,6 +49,9 @@
     }
 
     [Parameter]
+    public bool EnableTotalSecondsSlider { get; set; } = false;    
+
+    [Parameter]
     public int MinSeconds { get; set; } = 10;
 
     [Parameter]
@@ -41,6 +59,9 @@
 
     [Parameter]
     public EventCallback<TimeSpan> SelectedTimeChanged { get; set; }
+
+    [Parameter]
+    public string TimePartSelectedStyle { get; set; } = "background-color: azure;";
 
     private TimePart _selectedTimePart = TimePart.Seconds;
 
@@ -58,6 +79,7 @@
                 _seconds = value;
                 SelectedTime = new TimeSpan(_hours, _minutes, _seconds);
                 _totalSeconds = SelectedTime.TotalSeconds;
+                Task.Run(async () => await SelectedTimeChanged.InvokeAsync(SelectedTime));
                 StateHasChanged();
             }
         }
@@ -79,6 +101,7 @@
                 _minutes = value;
                 SelectedTime = new TimeSpan(_hours, _minutes, _seconds);
                 _totalSeconds = SelectedTime.TotalSeconds;
+                Task.Run(async () => await SelectedTimeChanged.InvokeAsync(SelectedTime));
                 StateHasChanged();
             }
         }
@@ -100,6 +123,7 @@
                 _hours = value;
                 SelectedTime = new TimeSpan(_hours, _minutes, _seconds);
                 _totalSeconds = SelectedTime.TotalSeconds;
+                Task.Run(async () => await SelectedTimeChanged.InvokeAsync(SelectedTime));
                 StateHasChanged();
             }
         }
@@ -123,6 +147,7 @@
                 _seconds = SelectedTime.Seconds;
                 _minutes = SelectedTime.Minutes;
                 _hours = SelectedTime.Hours;
+                Task.Run(async () => await SelectedTimeChanged.InvokeAsync(SelectedTime));
                 StateHasChanged();
             }
         }
@@ -143,5 +168,17 @@
     private void TimePartSelected(TimePart timePart)
     {
         _selectedTimePart = timePart;
+    }
+
+    private string TimePartStyle(TimePart timePart)
+    {
+        if (_selectedTimePart == timePart)
+        {
+            return TimePartSelectedStyle;
+        }
+        else
+        {
+            return string.Empty;
+        }
     }
 }
