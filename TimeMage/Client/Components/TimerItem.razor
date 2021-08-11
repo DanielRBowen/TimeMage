@@ -1,13 +1,13 @@
 ﻿<div class="row my-3">
     @if (IsEditing && Timer.IsTimerRunning == false)
     {
-        <div class="col-1">
+        <div class="col-2 mx-2">
             <button type="button" class="btn btn-outline-success" @onclick="() => OnDuplicate.InvokeAsync(Timer)"><span class="oi oi-document" aria-hidden="true"></span></button>
         </div>
-        <div class="col-1">
+        <div class="col-2 mx-2">
             <button type="button" class="btn btn-outline-danger" @onclick="() => OnDelete.InvokeAsync(Timer)"><span class="oi oi-trash" aria-hidden="true"></span></button>
         </div>
-        <div class="col-9" @onclick="EditTimer">
+        <div class="col-6 mx-2" @onclick="EditTimer">
             <div class="row">@Timer.Name</div>
             <div class="row">@Timer.Time</div>
         </div>
