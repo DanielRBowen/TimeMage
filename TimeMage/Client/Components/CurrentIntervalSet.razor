@@ -67,6 +67,8 @@ else
     protected List<PlaylistItem> Playlist = new List<PlaylistItem>();
     protected Dictionary<string, int> IntervalNameTrackIds = new();
     private List<IntervalSet> _preloadedIntervalSets = new List<IntervalSet>();
+    private string _currentAudioDuration = string.Empty;
+    private const string NextUp = "Next Up";
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
@@ -75,7 +77,10 @@ else
             _isLoading = true;
             // https://github.com/soend/BlazorAudioPlayer
             // https://stackoverflow.com/questions/64459271/how-can-you-play-a-recorded-audio-blob-on-the-client-side-using-howler-js
-            int trackId = 0;
+            byte[] nextUpAudioData = await SpeechToTextClient.GetSpeech(NextUp);
+            string nextUpAudioUrl = $"data:audio/wav;base64,{Convert.ToBase64String(nextUpAudioData)}";
+            Playlist.Add(new PlaylistItem(0, NextUp, nextUpAudioUrl));
+            int trackId = 1;
 
             foreach (var interval in IntervalSet.Intervals)
             {
@@ -106,6 +111,21 @@ else
 
     private void IntervalSet_OnSecondElapsed(object sender, EventArgs e)
     {
+        // Say "Next Up" the last 5 seconds of the inteval and then say the next interval name.
+        if (IntervalSet.CurrentTimerLeft.TotalSeconds == 5 && !string.IsNullOrWhiteSpace(IntervalSet.NextIntervalName))
+        {
+            Task.Run(async () =>
+            {
+                _ = await HowlerJsAudioPlayerInterop.Play(JS, 0);
+                await Task.Delay(1000);
+
+                if (IntervalNameTrackIds.TryGetValue(IntervalSet.NextIntervalName, out int trackId))
+                {
+                    _ = await HowlerJsAudioPlayerInterop.Play(JS, trackId);
+                }
+            });
+        }
+
         StateHasChanged();
     }
 
@@ -145,16 +165,8 @@ else
     {
         if (IntervalNameTrackIds.TryGetValue(IntervalSet.CurrentIntervalName, out int trackId))
         {
-            var howlerJsState = await HowlerJsAudioPlayerInterop.Play(JS, trackId);
+            _ = await HowlerJsAudioPlayerInterop.Play(JS, trackId);
         }
-
-        //byte[] audioData = await SpeechToTextClient.GetSpeech(IntervalSet.CurrentIntervalName);
-
-        //if (audioData != null)
-        //{
-        //await Audio.Play(JS, audioData);
-        //    StateHasChanged();
-        //}
     }
 
     private async Task Close()

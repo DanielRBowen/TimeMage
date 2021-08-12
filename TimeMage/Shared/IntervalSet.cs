@@ -43,6 +43,14 @@ namespace TimeMage.Shared
             get { return _currentIntervalName; }
         }
 
+        private string _nextIntervalName;
+
+        [JsonIgnore]
+        public string NextIntervalName
+        {
+            get { return _nextIntervalName; }
+        }
+
         private TimeSpan _totalTimeLeft;
 
         [JsonIgnore]
@@ -120,10 +128,12 @@ namespace TimeMage.Shared
         {
             _currentTimerLeft = Intervals[_currentIntervalIndex].TimeLeft;
             _currentIntervalName = Intervals[_currentIntervalIndex].Name;
+            _nextIntervalName = (_currentIntervalIndex < Intervals.Count) ? Intervals[_currentIntervalIndex + 1].Name : null;
             CurrentIntervalStarted(EventArgs.Empty);
             Intervals[_currentIntervalIndex].OnSecondElapsed += Interval_OnSecondElapsed;
             Intervals[_currentIntervalIndex].OnFinished += Interval_OnFinished;
             Intervals[_currentIntervalIndex].Start();
+
         }
 
         public void Stop()
