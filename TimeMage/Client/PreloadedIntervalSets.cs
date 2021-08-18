@@ -111,6 +111,36 @@ namespace TimeMage.Client
 					new TmTimer{ Name = "Rest", Time = TimeSpan.FromSeconds(20) },
 					new TmTimer{ Name = "Shoulder Tap Pushups", Time = TimeSpan.FromSeconds(10) },
 				}
+			},
+			new IntervalSet
+			{
+				Name = "Door",
+				GuideUrl = "https://youtu.be/Ae81rtoBpOw",
+				Intervals = new List<TmTimer>
+				{
+					new TmTimer{ Name = "Door Face Pull", Time = TimeSpan.FromSeconds(30) },
+					new TmTimer{ Name = "Door Hold", Time = TimeSpan.FromSeconds(30) },
+				}
+			},
+			new IntervalSet
+			{
+				Name = "Dips/Pullups",
+				Intervals = new List<TmTimer>
+				{
+					new TmTimer{ Name = "Dips", Time = TimeSpan.FromSeconds(15) },
+					new TmTimer{ Name = "Rest", Time = TimeSpan.FromSeconds(20) },
+					new TmTimer{ Name = "Dips", Time = TimeSpan.FromSeconds(15) },
+					new TmTimer{ Name = "Rest", Time = TimeSpan.FromSeconds(20) },
+					new TmTimer{ Name = "Dips", Time = TimeSpan.FromSeconds(15) },
+
+					new TmTimer{ Name = "Rest", Time = TimeSpan.FromSeconds(20) },
+
+					new TmTimer{ Name = "Pull Ups", Time = TimeSpan.FromSeconds(15) },
+					new TmTimer{ Name = "Rest", Time = TimeSpan.FromSeconds(20) },
+					new TmTimer{ Name = "Pull Ups", Time = TimeSpan.FromSeconds(15) },
+					new TmTimer{ Name = "Rest", Time = TimeSpan.FromSeconds(20) },
+					new TmTimer{ Name = "Pull Ups", Time = TimeSpan.FromSeconds(15) },
+				}
 			}
 		};
 	}

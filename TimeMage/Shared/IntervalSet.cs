@@ -70,6 +70,14 @@ namespace TimeMage.Shared
         [JsonInclude]
         public string GuideUrl { get; set; }
 
+        private bool _isPaused;
+
+        [JsonIgnore]
+        public bool IsPaused
+        {
+            get { return _isPaused; }
+        }
+
         protected virtual void Finished(EventArgs e)
         {
             OnFinished?.Invoke(this, e);
@@ -128,7 +136,7 @@ namespace TimeMage.Shared
         {
             _currentTimerLeft = Intervals[_currentIntervalIndex].TimeLeft;
             _currentIntervalName = Intervals[_currentIntervalIndex].Name;
-            _nextIntervalName = (_currentIntervalIndex < Intervals.Count) ? Intervals[_currentIntervalIndex + 1].Name : null;
+            _nextIntervalName = (_currentIntervalIndex < Intervals.Count - 1) ? Intervals[_currentIntervalIndex + 1].Name : null;
             CurrentIntervalStarted(EventArgs.Empty);
             Intervals[_currentIntervalIndex].OnSecondElapsed += Interval_OnSecondElapsed;
             Intervals[_currentIntervalIndex].OnFinished += Interval_OnFinished;
@@ -139,16 +147,34 @@ namespace TimeMage.Shared
         public void Stop()
         {
             _isTimerRunning = false;
+            UnPause();
             _totalTimeLeft = new TimeSpan();
             Intervals.ForEach(timer => { timer.Stop(); timer.OnFinished -= Interval_OnFinished; timer.OnSecondElapsed -= Interval_OnSecondElapsed; });
             Stopped(EventArgs.Empty);
         }
 
+        public void Pause()
+        {
+            //_isTimerRunning = false;
+            Intervals[_currentIntervalIndex].Pause();
+            _isPaused = true;
+        }
+
+        public void UnPause()
+        {
+            //_isTimerRunning = true;
+            Intervals[_currentIntervalIndex].UnPause();
+            _isPaused = false;
+        }
+
         private void Interval_OnSecondElapsed(object sender, EventArgs e)
         {
-            _totalTimeLeft = _totalTimeLeft.Subtract(new TimeSpan(0, 0, 1));
-            _currentTimerLeft = Intervals[_currentIntervalIndex].TimeLeft;
-            SecondElapsed(EventArgs.Empty);
+            if (_isPaused == false)
+            {
+                _totalTimeLeft = _totalTimeLeft.Subtract(new TimeSpan(0, 0, 1));
+                _currentTimerLeft = Intervals[_currentIntervalIndex].TimeLeft;
+                SecondElapsed(EventArgs.Empty);
+            }
         }
 
         private void Interval_OnStopped(object sender, EventArgs e)

@@ -40,6 +40,14 @@ namespace TimeMage.Shared
             get { return _isTimerRunning; }
         }
 
+        private bool _isPaused;
+
+        [JsonIgnore]
+        public bool IsPaused
+        {
+            get { return _isPaused; }
+        }
+
         protected virtual void Finished(EventArgs e)
         {
             OnFinished?.Invoke(this, e);
@@ -80,7 +88,12 @@ namespace TimeMage.Shared
             while (_timeLeft > new TimeSpan() && _isTimerRunning == true && _isTimerStopping == false)
             {
                 await Task.Delay(1000);
-                _timeLeft = _timeLeft.Subtract(new TimeSpan(0, 0, 1));
+
+                if (_isPaused == false)
+                {
+                    _timeLeft = _timeLeft.Subtract(new TimeSpan(0, 0, 1));
+                }
+
                 SecondElapsed(EventArgs.Empty);
             }
 
@@ -91,8 +104,19 @@ namespace TimeMage.Shared
         public void Stop()
         {
             _isTimerStopping = true;
+            _isPaused = false;
             Task.Run(() => Stopping());
             Stopped(EventArgs.Empty);
+        }
+
+        public void Pause()
+        {
+            _isPaused = true;
+        }
+
+        public void UnPause()
+        {
+            _isPaused = false;
         }
 
         private async Task Stopping()

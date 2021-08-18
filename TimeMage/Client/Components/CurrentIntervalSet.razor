@@ -23,9 +23,25 @@ else
 
             <h3 class="@singleColumnCenter">Interval Time Left: @IntervalSet.CurrentTimerLeft</h3>
 
-            <button type="button" class="@singleColumnCenter btn btn-outline-danger" @onclick="async() => await Stop()">
-                <span class="oi oi-media-stop m-2 pointer" aria-hidden="true"></span>
-            </button>
+            @if (IntervalSet.IsPaused)
+            {
+                <button type="button" class="@singleColumnCenter btn btn-outline-danger" @onclick="() => IntervalSet.UnPause()">
+                    <span class="oi oi-media-play m-2 pointer" aria-hidden="true"></span>
+                </button>
+
+                <div class="my-5"></div>
+                <div class="my-5"></div>
+
+                <button type="button" class="@singleColumnCenter btn btn-outline-danger" @onclick="async() => await Stop()">
+                    <span class="oi oi-media-stop m-2 pointer" aria-hidden="true"></span>
+                </button>
+            }
+            else
+            {
+                <button type="button" class="@singleColumnCenter btn btn-outline-danger" @onclick="() => IntervalSet.Pause()">
+                    <span class="oi oi-media-pause m-2 pointer" aria-hidden="true"></span>
+                </button>
+            }
         }
         else
         {
@@ -80,7 +96,9 @@ else
             byte[] nextUpAudioData = await SpeechToTextClient.GetSpeech(NextUp);
             string nextUpAudioUrl = $"data:audio/wav;base64,{Convert.ToBase64String(nextUpAudioData)}";
             Playlist.Add(new PlaylistItem(0, NextUp, nextUpAudioUrl));
-            int trackId = 1;
+            Playlist.Add(new PlaylistItem(1, "Ding", "/sounds/ding.wav"));
+
+            int trackId = 2;
 
             foreach (var interval in IntervalSet.Intervals)
             {
@@ -138,8 +156,9 @@ else
     {
         if (IntervalSet.IsTimerRunning)
         {
-            playSound = true;
-            Task.Run(() => StopPlayingTheSoundInAMoment());
+            //playSound = true;
+            Task.Run(async () => await Ding());
+            Task.Run(async () => await StopPlayingTheSoundInAMoment());
         }
 
         StateHasChanged();
@@ -167,6 +186,11 @@ else
         {
             _ = await HowlerJsAudioPlayerInterop.Play(JS, trackId);
         }
+    }
+
+    private async Task Ding()
+    {
+         _ = await HowlerJsAudioPlayerInterop.Play(JS, 1);
     }
 
     private async Task Close()

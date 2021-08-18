@@ -4,511 +4,66 @@
     "Intervals": [
       {
         "Name": "Mountain Climbers",
-        "Time": {
-          "Ticks": 300000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 30,
-          "TotalDays": 0.00034722222222222224,
-          "TotalHours": 0.008333333333333333,
-          "TotalMilliseconds": 30000,
-          "TotalMinutes": 0.5,
-          "TotalSeconds": 30
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:30"
       },
       {
         "Name": "Side Through",
-        "Time": {
-          "Ticks": 200000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 20,
-          "TotalDays": 0.0002314814814814815,
-          "TotalHours": 0.005555555555555556,
-          "TotalMilliseconds": 20000,
-          "TotalMinutes": 0.3333333333333333,
-          "TotalSeconds": 20
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:20"
       },
       {
         "Name": "Burpees",
-        "Time": {
-          "Ticks": 100000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 10,
-          "TotalDays": 0.00011574074074074075,
-          "TotalHours": 0.002777777777777778,
-          "TotalMilliseconds": 10000,
-          "TotalMinutes": 0.16666666666666666,
-          "TotalSeconds": 10
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:10"
       },
       {
         "Name": "Rest",
-        "Time": {
-          "Ticks": 100000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 10,
-          "TotalDays": 0.00011574074074074075,
-          "TotalHours": 0.002777777777777778,
-          "TotalMilliseconds": 10000,
-          "TotalMinutes": 0.16666666666666666,
-          "TotalSeconds": 10
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:10"
       },
       {
         "Name": "Mountain Climbers",
-        "Time": {
-          "Ticks": 100000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 10,
-          "TotalDays": 0.00011574074074074075,
-          "TotalHours": 0.002777777777777778,
-          "TotalMilliseconds": 10000,
-          "TotalMinutes": 0.16666666666666666,
-          "TotalSeconds": 10
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:10"
       },
       {
         "Name": "Side Through",
-        "Time": {
-          "Ticks": 300000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 30,
-          "TotalDays": 0.00034722222222222224,
-          "TotalHours": 0.008333333333333333,
-          "TotalMilliseconds": 30000,
-          "TotalMinutes": 0.5,
-          "TotalSeconds": 30
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:30"
       },
       {
         "Name": "Burpees",
-        "Time": {
-          "Ticks": 200000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 20,
-          "TotalDays": 0.0002314814814814815,
-          "TotalHours": 0.005555555555555556,
-          "TotalMilliseconds": 20000,
-          "TotalMinutes": 0.3333333333333333,
-          "TotalSeconds": 20
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:20"
       },
       {
         "Name": "Rest",
-        "Time": {
-          "Ticks": 200000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 20,
-          "TotalDays": 0.0002314814814814815,
-          "TotalHours": 0.005555555555555556,
-          "TotalMilliseconds": 20000,
-          "TotalMinutes": 0.3333333333333333,
-          "TotalSeconds": 20
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:20"
       },
       {
         "Name": "Mountain Climbers",
-        "Time": {
-          "Ticks": 200000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 20,
-          "TotalDays": 0.0002314814814814815,
-          "TotalHours": 0.005555555555555556,
-          "TotalMilliseconds": 20000,
-          "TotalMinutes": 0.3333333333333333,
-          "TotalSeconds": 20
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:20"
       },
       {
         "Name": "Side Through",
-        "Time": {
-          "Ticks": 100000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 10,
-          "TotalDays": 0.00011574074074074075,
-          "TotalHours": 0.002777777777777778,
-          "TotalMilliseconds": 10000,
-          "TotalMinutes": 0.16666666666666666,
-          "TotalSeconds": 10
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:10"
       },
       {
         "Name": "Burpees",
-        "Time": {
-          "Ticks": 300000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 30,
-          "TotalDays": 0.00034722222222222224,
-          "TotalHours": 0.008333333333333333,
-          "TotalMilliseconds": 30000,
-          "TotalMinutes": 0.5,
-          "TotalSeconds": 30
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:30"
       },
       {
         "Name": "Rest",
-        "Time": {
-          "Ticks": 300000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 30,
-          "TotalDays": 0.00034722222222222224,
-          "TotalHours": 0.008333333333333333,
-          "TotalMilliseconds": 30000,
-          "TotalMinutes": 0.5,
-          "TotalSeconds": 30
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:30"
       },
       {
         "Name": "Mountain Climbers",
-        "Time": {
-          "Ticks": 300000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 30,
-          "TotalDays": 0.00034722222222222224,
-          "TotalHours": 0.008333333333333333,
-          "TotalMilliseconds": 30000,
-          "TotalMinutes": 0.5,
-          "TotalSeconds": 30
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:30"
       },
       {
         "Name": "Side Through",
-        "Time": {
-          "Ticks": 200000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 20,
-          "TotalDays": 0.0002314814814814815,
-          "TotalHours": 0.005555555555555556,
-          "TotalMilliseconds": 20000,
-          "TotalMinutes": 0.3333333333333333,
-          "TotalSeconds": 20
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:20"
       },
       {
         "Name": "Burpees",
-        "Time": {
-          "Ticks": 100000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 10,
-          "TotalDays": 0.00011574074074074075,
-          "TotalHours": 0.002777777777777778,
-          "TotalMilliseconds": 10000,
-          "TotalMinutes": 0.16666666666666666,
-          "TotalSeconds": 10
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:10"
       }
     ],
-    "TotalTime": {
-      "Ticks": 3000000000,
-      "Days": 0,
-      "Hours": 0,
-      "Milliseconds": 0,
-      "Minutes": 5,
-      "Seconds": 0,
-      "TotalDays": 0.003472222222222222,
-      "TotalHours": 0.08333333333333333,
-      "TotalMilliseconds": 300000,
-      "TotalMinutes": 5,
-      "TotalSeconds": 300
-    },
-    "IsTimerRunning": false,
-    "CurrentIntervalName": null,
-    "TotalTimeLeft": {
-      "Ticks": 0,
-      "Days": 0,
-      "Hours": 0,
-      "Milliseconds": 0,
-      "Minutes": 0,
-      "Seconds": 0,
-      "TotalDays": 0,
-      "TotalHours": 0,
-      "TotalMilliseconds": 0,
-      "TotalMinutes": 0,
-      "TotalSeconds": 0
-    },
-    "CurrentTimerLeft": {
-      "Ticks": 0,
-      "Days": 0,
-      "Hours": 0,
-      "Milliseconds": 0,
-      "Minutes": 0,
-      "Seconds": 0,
-      "TotalDays": 0,
-      "TotalHours": 0,
-      "TotalMilliseconds": 0,
-      "TotalMinutes": 0,
-      "TotalSeconds": 0
-    },
+    "TotalTime": "00:05:00",
     "GuideUrl": "https://youtu.be/9boaIRTLnns"
   },
   {
@@ -516,635 +71,82 @@
     "Intervals": [
       {
         "Name": "Crescent Tucks",
-        "Time": {
-          "Ticks": 450000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 45,
-          "TotalDays": 0.0005208333333333333,
-          "TotalHours": 0.0125,
-          "TotalMilliseconds": 45000,
-          "TotalMinutes": 0.75,
-          "TotalSeconds": 45
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:45"
       },
       {
         "Name": "Rest",
-        "Time": {
-          "Ticks": 150000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 15,
-          "TotalDays": 0.00017361111111111112,
-          "TotalHours": 0.004166666666666667,
-          "TotalMilliseconds": 15000,
-          "TotalMinutes": 0.25,
-          "TotalSeconds": 15
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:15"
       },
       {
         "Name": "Backwards 7\u0027s",
-        "Time": {
-          "Ticks": 450000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 45,
-          "TotalDays": 0.0005208333333333333,
-          "TotalHours": 0.0125,
-          "TotalMilliseconds": 45000,
-          "TotalMinutes": 0.75,
-          "TotalSeconds": 45
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:45"
       },
       {
         "Name": "Rest",
-        "Time": {
-          "Ticks": 150000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 15,
-          "TotalDays": 0.00017361111111111112,
-          "TotalHours": 0.004166666666666667,
-          "TotalMilliseconds": 15000,
-          "TotalMinutes": 0.25,
-          "TotalSeconds": 15
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:15"
       },
       {
         "Name": "Swipers",
-        "Time": {
-          "Ticks": 450000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 45,
-          "TotalDays": 0.0005208333333333333,
-          "TotalHours": 0.0125,
-          "TotalMilliseconds": 45000,
-          "TotalMinutes": 0.75,
-          "TotalSeconds": 45
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:45"
       },
       {
         "Name": "Rest",
-        "Time": {
-          "Ticks": 150000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 15,
-          "TotalDays": 0.00017361111111111112,
-          "TotalHours": 0.004166666666666667,
-          "TotalMilliseconds": 15000,
-          "TotalMinutes": 0.25,
-          "TotalSeconds": 15
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:15"
       },
       {
         "Name": "Side Cycle Left",
-        "Time": {
-          "Ticks": 450000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 45,
-          "TotalDays": 0.0005208333333333333,
-          "TotalHours": 0.0125,
-          "TotalMilliseconds": 45000,
-          "TotalMinutes": 0.75,
-          "TotalSeconds": 45
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:45"
       },
       {
         "Name": "Rest",
-        "Time": {
-          "Ticks": 150000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 15,
-          "TotalDays": 0.00017361111111111112,
-          "TotalHours": 0.004166666666666667,
-          "TotalMilliseconds": 15000,
-          "TotalMinutes": 0.25,
-          "TotalSeconds": 15
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:15"
       },
       {
         "Name": "Side Cycle Right",
-        "Time": {
-          "Ticks": 450000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 45,
-          "TotalDays": 0.0005208333333333333,
-          "TotalHours": 0.0125,
-          "TotalMilliseconds": 45000,
-          "TotalMinutes": 0.75,
-          "TotalSeconds": 45
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:45"
       },
       {
         "Name": "Rest",
-        "Time": {
-          "Ticks": 150000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 15,
-          "TotalDays": 0.00017361111111111112,
-          "TotalHours": 0.004166666666666667,
-          "TotalMilliseconds": 15000,
-          "TotalMinutes": 0.25,
-          "TotalSeconds": 15
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:15"
       },
       {
         "Name": "Mountain Hip Dips",
-        "Time": {
-          "Ticks": 450000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 45,
-          "TotalDays": 0.0005208333333333333,
-          "TotalHours": 0.0125,
-          "TotalMilliseconds": 45000,
-          "TotalMinutes": 0.75,
-          "TotalSeconds": 45
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:45"
       },
       {
         "Name": "Rest",
-        "Time": {
-          "Ticks": 150000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 15,
-          "TotalDays": 0.00017361111111111112,
-          "TotalHours": 0.004166666666666667,
-          "TotalMilliseconds": 15000,
-          "TotalMinutes": 0.25,
-          "TotalSeconds": 15
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:15"
       },
       {
         "Name": "Frog V-Ups",
-        "Time": {
-          "Ticks": 450000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 45,
-          "TotalDays": 0.0005208333333333333,
-          "TotalHours": 0.0125,
-          "TotalMilliseconds": 45000,
-          "TotalMinutes": 0.75,
-          "TotalSeconds": 45
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:45"
       },
       {
         "Name": "Rest",
-        "Time": {
-          "Ticks": 150000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 15,
-          "TotalDays": 0.00017361111111111112,
-          "TotalHours": 0.004166666666666667,
-          "TotalMilliseconds": 15000,
-          "TotalMinutes": 0.25,
-          "TotalSeconds": 15
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:15"
       },
       {
         "Name": "Side Scissor Crunch Left",
-        "Time": {
-          "Ticks": 450000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 45,
-          "TotalDays": 0.0005208333333333333,
-          "TotalHours": 0.0125,
-          "TotalMilliseconds": 45000,
-          "TotalMinutes": 0.75,
-          "TotalSeconds": 45
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:45"
       },
       {
         "Name": "Rest",
-        "Time": {
-          "Ticks": 150000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 15,
-          "TotalDays": 0.00017361111111111112,
-          "TotalHours": 0.004166666666666667,
-          "TotalMilliseconds": 15000,
-          "TotalMinutes": 0.25,
-          "TotalSeconds": 15
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:15"
       },
       {
         "Name": "Side Scissor Crunch Right",
-        "Time": {
-          "Ticks": 450000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 45,
-          "TotalDays": 0.0005208333333333333,
-          "TotalHours": 0.0125,
-          "TotalMilliseconds": 45000,
-          "TotalMinutes": 0.75,
-          "TotalSeconds": 45
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:45"
       },
       {
         "Name": "Rest",
-        "Time": {
-          "Ticks": 150000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 15,
-          "TotalDays": 0.00017361111111111112,
-          "TotalHours": 0.004166666666666667,
-          "TotalMilliseconds": 15000,
-          "TotalMinutes": 0.25,
-          "TotalSeconds": 15
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:15"
       },
       {
         "Name": "Corpse Crunch",
-        "Time": {
-          "Ticks": 450000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 45,
-          "TotalDays": 0.0005208333333333333,
-          "TotalHours": 0.0125,
-          "TotalMilliseconds": 45000,
-          "TotalMinutes": 0.75,
-          "TotalSeconds": 45
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:45"
       }
     ],
-    "TotalTime": {
-      "Ticks": 5850000000,
-      "Days": 0,
-      "Hours": 0,
-      "Milliseconds": 0,
-      "Minutes": 9,
-      "Seconds": 45,
-      "TotalDays": 0.0067708333333333336,
-      "TotalHours": 0.1625,
-      "TotalMilliseconds": 585000,
-      "TotalMinutes": 9.75,
-      "TotalSeconds": 585
-    },
-    "IsTimerRunning": false,
-    "CurrentIntervalName": null,
-    "TotalTimeLeft": {
-      "Ticks": 0,
-      "Days": 0,
-      "Hours": 0,
-      "Milliseconds": 0,
-      "Minutes": 0,
-      "Seconds": 0,
-      "TotalDays": 0,
-      "TotalHours": 0,
-      "TotalMilliseconds": 0,
-      "TotalMinutes": 0,
-      "TotalSeconds": 0
-    },
-    "CurrentTimerLeft": {
-      "Ticks": 0,
-      "Days": 0,
-      "Hours": 0,
-      "Milliseconds": 0,
-      "Minutes": 0,
-      "Seconds": 0,
-      "TotalDays": 0,
-      "TotalHours": 0,
-      "TotalMilliseconds": 0,
-      "TotalMinutes": 0,
-      "TotalSeconds": 0
-    },
+    "TotalTime": "00:09:45",
     "GuideUrl": "https://youtu.be/i27K2ry9jEo"
   },
   {
@@ -1152,1255 +154,228 @@
     "Intervals": [
       {
         "Name": "Plyo Release Pushup",
-        "Time": {
-          "Ticks": 100000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 10,
-          "TotalDays": 0.00011574074074074075,
-          "TotalHours": 0.002777777777777778,
-          "TotalMilliseconds": 10000,
-          "TotalMinutes": 0.16666666666666666,
-          "TotalSeconds": 10
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:10"
       },
       {
         "Name": "Rest",
-        "Time": {
-          "Ticks": 200000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 20,
-          "TotalDays": 0.0002314814814814815,
-          "TotalHours": 0.005555555555555556,
-          "TotalMilliseconds": 20000,
-          "TotalMinutes": 0.3333333333333333,
-          "TotalSeconds": 20
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:20"
       },
       {
         "Name": "Plyo Release Pushup",
-        "Time": {
-          "Ticks": 100000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 10,
-          "TotalDays": 0.00011574074074074075,
-          "TotalHours": 0.002777777777777778,
-          "TotalMilliseconds": 10000,
-          "TotalMinutes": 0.16666666666666666,
-          "TotalSeconds": 10
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:10"
       },
       {
         "Name": "Rest",
-        "Time": {
-          "Ticks": 200000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 20,
-          "TotalDays": 0.0002314814814814815,
-          "TotalHours": 0.005555555555555556,
-          "TotalMilliseconds": 20000,
-          "TotalMinutes": 0.3333333333333333,
-          "TotalSeconds": 20
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:20"
       },
       {
         "Name": "Plyo Release Pushup",
-        "Time": {
-          "Ticks": 100000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 10,
-          "TotalDays": 0.00011574074074074075,
-          "TotalHours": 0.002777777777777778,
-          "TotalMilliseconds": 10000,
-          "TotalMinutes": 0.16666666666666666,
-          "TotalSeconds": 10
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:10"
       },
       {
         "Name": "Rest",
-        "Time": {
-          "Ticks": 200000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 20,
-          "TotalDays": 0.0002314814814814815,
-          "TotalHours": 0.005555555555555556,
-          "TotalMilliseconds": 20000,
-          "TotalMinutes": 0.3333333333333333,
-          "TotalSeconds": 20
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:20"
       },
       {
         "Name": "Plyo Release Pushup",
-        "Time": {
-          "Ticks": 100000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 10,
-          "TotalDays": 0.00011574074074074075,
-          "TotalHours": 0.002777777777777778,
-          "TotalMilliseconds": 10000,
-          "TotalMinutes": 0.16666666666666666,
-          "TotalSeconds": 10
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:10"
       },
       {
         "Name": "Rest",
-        "Time": {
-          "Ticks": 200000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 20,
-          "TotalDays": 0.0002314814814814815,
-          "TotalHours": 0.005555555555555556,
-          "TotalMilliseconds": 20000,
-          "TotalMinutes": 0.3333333333333333,
-          "TotalSeconds": 20
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:20"
       },
       {
         "Name": "Prowler Pushup",
-        "Time": {
-          "Ticks": 100000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 10,
-          "TotalDays": 0.00011574074074074075,
-          "TotalHours": 0.002777777777777778,
-          "TotalMilliseconds": 10000,
-          "TotalMinutes": 0.16666666666666666,
-          "TotalSeconds": 10
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:10"
       },
       {
         "Name": "Rest",
-        "Time": {
-          "Ticks": 200000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 20,
-          "TotalDays": 0.0002314814814814815,
-          "TotalHours": 0.005555555555555556,
-          "TotalMilliseconds": 20000,
-          "TotalMinutes": 0.3333333333333333,
-          "TotalSeconds": 20
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:20"
       },
       {
         "Name": "Prowler Pushup",
-        "Time": {
-          "Ticks": 100000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 10,
-          "TotalDays": 0.00011574074074074075,
-          "TotalHours": 0.002777777777777778,
-          "TotalMilliseconds": 10000,
-          "TotalMinutes": 0.16666666666666666,
-          "TotalSeconds": 10
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:10"
       },
       {
         "Name": "Rest",
-        "Time": {
-          "Ticks": 200000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 20,
-          "TotalDays": 0.0002314814814814815,
-          "TotalHours": 0.005555555555555556,
-          "TotalMilliseconds": 20000,
-          "TotalMinutes": 0.3333333333333333,
-          "TotalSeconds": 20
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:20"
       },
       {
         "Name": "Prowler Pushup",
-        "Time": {
-          "Ticks": 100000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 10,
-          "TotalDays": 0.00011574074074074075,
-          "TotalHours": 0.002777777777777778,
-          "TotalMilliseconds": 10000,
-          "TotalMinutes": 0.16666666666666666,
-          "TotalSeconds": 10
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:10"
       },
       {
         "Name": "Rest",
-        "Time": {
-          "Ticks": 200000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 20,
-          "TotalDays": 0.0002314814814814815,
-          "TotalHours": 0.005555555555555556,
-          "TotalMilliseconds": 20000,
-          "TotalMinutes": 0.3333333333333333,
-          "TotalSeconds": 20
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:20"
       },
       {
         "Name": "Prowler Pushup",
-        "Time": {
-          "Ticks": 100000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 10,
-          "TotalDays": 0.00011574074074074075,
-          "TotalHours": 0.002777777777777778,
-          "TotalMilliseconds": 10000,
-          "TotalMinutes": 0.16666666666666666,
-          "TotalSeconds": 10
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:10"
       },
       {
         "Name": "Rest",
-        "Time": {
-          "Ticks": 200000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 20,
-          "TotalDays": 0.0002314814814814815,
-          "TotalHours": 0.005555555555555556,
-          "TotalMilliseconds": 20000,
-          "TotalMinutes": 0.3333333333333333,
-          "TotalSeconds": 20
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:20"
       },
       {
         "Name": "Decline Pushup",
-        "Time": {
-          "Ticks": 100000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 10,
-          "TotalDays": 0.00011574074074074075,
-          "TotalHours": 0.002777777777777778,
-          "TotalMilliseconds": 10000,
-          "TotalMinutes": 0.16666666666666666,
-          "TotalSeconds": 10
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:10"
       },
       {
         "Name": "Rest",
-        "Time": {
-          "Ticks": 200000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 20,
-          "TotalDays": 0.0002314814814814815,
-          "TotalHours": 0.005555555555555556,
-          "TotalMilliseconds": 20000,
-          "TotalMinutes": 0.3333333333333333,
-          "TotalSeconds": 20
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:20"
       },
       {
         "Name": "Decline Pushup",
-        "Time": {
-          "Ticks": 100000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 10,
-          "TotalDays": 0.00011574074074074075,
-          "TotalHours": 0.002777777777777778,
-          "TotalMilliseconds": 10000,
-          "TotalMinutes": 0.16666666666666666,
-          "TotalSeconds": 10
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:10"
       },
       {
         "Name": "Rest",
-        "Time": {
-          "Ticks": 200000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 20,
-          "TotalDays": 0.0002314814814814815,
-          "TotalHours": 0.005555555555555556,
-          "TotalMilliseconds": 20000,
-          "TotalMinutes": 0.3333333333333333,
-          "TotalSeconds": 20
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:20"
       },
       {
         "Name": "Decline Pushup",
-        "Time": {
-          "Ticks": 100000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 10,
-          "TotalDays": 0.00011574074074074075,
-          "TotalHours": 0.002777777777777778,
-          "TotalMilliseconds": 10000,
-          "TotalMinutes": 0.16666666666666666,
-          "TotalSeconds": 10
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:10"
       },
       {
         "Name": "Rest",
-        "Time": {
-          "Ticks": 200000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 20,
-          "TotalDays": 0.0002314814814814815,
-          "TotalHours": 0.005555555555555556,
-          "TotalMilliseconds": 20000,
-          "TotalMinutes": 0.3333333333333333,
-          "TotalSeconds": 20
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:20"
       },
       {
         "Name": "Decline Pushup",
-        "Time": {
-          "Ticks": 100000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 10,
-          "TotalDays": 0.00011574074074074075,
-          "TotalHours": 0.002777777777777778,
-          "TotalMilliseconds": 10000,
-          "TotalMinutes": 0.16666666666666666,
-          "TotalSeconds": 10
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:10"
       },
       {
         "Name": "Rest",
-        "Time": {
-          "Ticks": 200000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 20,
-          "TotalDays": 0.0002314814814814815,
-          "TotalHours": 0.005555555555555556,
-          "TotalMilliseconds": 20000,
-          "TotalMinutes": 0.3333333333333333,
-          "TotalSeconds": 20
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:20"
       },
       {
         "Name": "Lateral Pushups",
-        "Time": {
-          "Ticks": 100000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 10,
-          "TotalDays": 0.00011574074074074075,
-          "TotalHours": 0.002777777777777778,
-          "TotalMilliseconds": 10000,
-          "TotalMinutes": 0.16666666666666666,
-          "TotalSeconds": 10
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:10"
       },
       {
         "Name": "Rest",
-        "Time": {
-          "Ticks": 200000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 20,
-          "TotalDays": 0.0002314814814814815,
-          "TotalHours": 0.005555555555555556,
-          "TotalMilliseconds": 20000,
-          "TotalMinutes": 0.3333333333333333,
-          "TotalSeconds": 20
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:20"
       },
       {
         "Name": "Lateral Pushups",
-        "Time": {
-          "Ticks": 100000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 10,
-          "TotalDays": 0.00011574074074074075,
-          "TotalHours": 0.002777777777777778,
-          "TotalMilliseconds": 10000,
-          "TotalMinutes": 0.16666666666666666,
-          "TotalSeconds": 10
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:10"
       },
       {
         "Name": "Rest",
-        "Time": {
-          "Ticks": 200000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 20,
-          "TotalDays": 0.0002314814814814815,
-          "TotalHours": 0.005555555555555556,
-          "TotalMilliseconds": 20000,
-          "TotalMinutes": 0.3333333333333333,
-          "TotalSeconds": 20
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:20"
       },
       {
         "Name": "Lateral Pushups",
-        "Time": {
-          "Ticks": 100000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 10,
-          "TotalDays": 0.00011574074074074075,
-          "TotalHours": 0.002777777777777778,
-          "TotalMilliseconds": 10000,
-          "TotalMinutes": 0.16666666666666666,
-          "TotalSeconds": 10
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:10"
       },
       {
         "Name": "Rest",
-        "Time": {
-          "Ticks": 200000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 20,
-          "TotalDays": 0.0002314814814814815,
-          "TotalHours": 0.005555555555555556,
-          "TotalMilliseconds": 20000,
-          "TotalMinutes": 0.3333333333333333,
-          "TotalSeconds": 20
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:20"
       },
       {
         "Name": "Lateral Pushups",
-        "Time": {
-          "Ticks": 100000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 10,
-          "TotalDays": 0.00011574074074074075,
-          "TotalHours": 0.002777777777777778,
-          "TotalMilliseconds": 10000,
-          "TotalMinutes": 0.16666666666666666,
-          "TotalSeconds": 10
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:10"
       },
       {
         "Name": "Rest",
-        "Time": {
-          "Ticks": 200000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 20,
-          "TotalDays": 0.0002314814814814815,
-          "TotalHours": 0.005555555555555556,
-          "TotalMilliseconds": 20000,
-          "TotalMinutes": 0.3333333333333333,
-          "TotalSeconds": 20
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:20"
       },
       {
         "Name": "Shoulder Tap Pushups",
-        "Time": {
-          "Ticks": 100000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 10,
-          "TotalDays": 0.00011574074074074075,
-          "TotalHours": 0.002777777777777778,
-          "TotalMilliseconds": 10000,
-          "TotalMinutes": 0.16666666666666666,
-          "TotalSeconds": 10
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:10"
       },
       {
         "Name": "Rest",
-        "Time": {
-          "Ticks": 200000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 20,
-          "TotalDays": 0.0002314814814814815,
-          "TotalHours": 0.005555555555555556,
-          "TotalMilliseconds": 20000,
-          "TotalMinutes": 0.3333333333333333,
-          "TotalSeconds": 20
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:20"
       },
       {
         "Name": "Shoulder Tap Pushups",
-        "Time": {
-          "Ticks": 100000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 10,
-          "TotalDays": 0.00011574074074074075,
-          "TotalHours": 0.002777777777777778,
-          "TotalMilliseconds": 10000,
-          "TotalMinutes": 0.16666666666666666,
-          "TotalSeconds": 10
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:10"
       },
       {
         "Name": "Rest",
-        "Time": {
-          "Ticks": 200000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 20,
-          "TotalDays": 0.0002314814814814815,
-          "TotalHours": 0.005555555555555556,
-          "TotalMilliseconds": 20000,
-          "TotalMinutes": 0.3333333333333333,
-          "TotalSeconds": 20
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:20"
       },
       {
         "Name": "Shoulder Tap Pushups",
-        "Time": {
-          "Ticks": 100000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 10,
-          "TotalDays": 0.00011574074074074075,
-          "TotalHours": 0.002777777777777778,
-          "TotalMilliseconds": 10000,
-          "TotalMinutes": 0.16666666666666666,
-          "TotalSeconds": 10
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:10"
       },
       {
         "Name": "Rest",
-        "Time": {
-          "Ticks": 200000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 20,
-          "TotalDays": 0.0002314814814814815,
-          "TotalHours": 0.005555555555555556,
-          "TotalMilliseconds": 20000,
-          "TotalMinutes": 0.3333333333333333,
-          "TotalSeconds": 20
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:20"
       },
       {
         "Name": "Shoulder Tap Pushups",
-        "Time": {
-          "Ticks": 100000000,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 10,
-          "TotalDays": 0.00011574074074074075,
-          "TotalHours": 0.002777777777777778,
-          "TotalMilliseconds": 10000,
-          "TotalMinutes": 0.16666666666666666,
-          "TotalSeconds": 10
-        },
-        "TimeLeft": {
-          "Ticks": 0,
-          "Days": 0,
-          "Hours": 0,
-          "Milliseconds": 0,
-          "Minutes": 0,
-          "Seconds": 0,
-          "TotalDays": 0,
-          "TotalHours": 0,
-          "TotalMilliseconds": 0,
-          "TotalMinutes": 0,
-          "TotalSeconds": 0
-        },
-        "IsTimerStopping": false,
-        "IsTimerRunning": false
+        "Time": "00:00:10"
       }
     ],
-    "TotalTime": {
-      "Ticks": 5800000000,
-      "Days": 0,
-      "Hours": 0,
-      "Milliseconds": 0,
-      "Minutes": 9,
-      "Seconds": 40,
-      "TotalDays": 0.006712962962962963,
-      "TotalHours": 0.16111111111111112,
-      "TotalMilliseconds": 580000,
-      "TotalMinutes": 9.666666666666666,
-      "TotalSeconds": 580
-    },
-    "IsTimerRunning": false,
-    "CurrentIntervalName": null,
-    "TotalTimeLeft": {
-      "Ticks": 0,
-      "Days": 0,
-      "Hours": 0,
-      "Milliseconds": 0,
-      "Minutes": 0,
-      "Seconds": 0,
-      "TotalDays": 0,
-      "TotalHours": 0,
-      "TotalMilliseconds": 0,
-      "TotalMinutes": 0,
-      "TotalSeconds": 0
-    },
-    "CurrentTimerLeft": {
-      "Ticks": 0,
-      "Days": 0,
-      "Hours": 0,
-      "Milliseconds": 0,
-      "Minutes": 0,
-      "Seconds": 0,
-      "TotalDays": 0,
-      "TotalHours": 0,
-      "TotalMilliseconds": 0,
-      "TotalMinutes": 0,
-      "TotalSeconds": 0
-    },
+    "TotalTime": "00:09:40",
     "GuideUrl": "https://youtu.be/rxEMKXW2Wqs"
+  },
+  {
+    "Name": "Door",
+    "Intervals": [
+      {
+        "Name": "Door Face Pull",
+        "Time": "00:00:30"
+      },
+      {
+        "Name": "Door Hold",
+        "Time": "00:00:30"
+      }
+    ],
+    "TotalTime": "00:01:00",
+    "GuideUrl": "https://youtu.be/Ae81rtoBpOw"
+  },
+  {
+    "Name": "Dips/Pullups",
+    "Intervals": [
+      {
+        "Name": "Dips",
+        "Time": "00:00:15"
+      },
+      {
+        "Name": "Rest",
+        "Time": "00:00:20"
+      },
+      {
+        "Name": "Dips",
+        "Time": "00:00:15"
+      },
+      {
+        "Name": "Rest",
+        "Time": "00:00:20"
+      },
+      {
+        "Name": "Dips",
+        "Time": "00:00:15"
+      },
+      {
+        "Name": "Rest",
+        "Time": "00:00:20"
+      },
+      {
+        "Name": "Pull Ups",
+        "Time": "00:00:15"
+      },
+      {
+        "Name": "Rest",
+        "Time": "00:00:20"
+      },
+      {
+        "Name": "Pull Ups",
+        "Time": "00:00:15"
+      },
+      {
+        "Name": "Rest",
+        "Time": "00:00:20"
+      },
+      {
+        "Name": "Pull Ups",
+        "Time": "00:00:15"
+      }
+    ],
+    "TotalTime": "00:03:10",
+    "GuideUrl": null
   }
 ]
