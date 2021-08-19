@@ -17,6 +17,8 @@ You will need to install [node.js](https://nodejs.org/en/download/) and then in 
 
 This uses [BlazorStrap](https://github.com/chanan/BlazorStrap) for modals.
 
+Uses [NoSleep.js](https://richtr.github.io/NoSleep.js/) to make it so the display will not turn off when running an IntervalSet on a mobile device. 
+
 It uses [DistributedCache](https://docs.microsoft.com/en-us/aspnet/core/performance/caching/distributed?view=aspnetcore-5.0) for caching the audio blob on the server and [Blazored.LocalStorage](https://github.com/blazored/LocalStorage) for caching on the client.
 
 Preloaded IntervalSets are from [ATHLEAN-X™](https://www.youtube.com/user/JDCav24)
