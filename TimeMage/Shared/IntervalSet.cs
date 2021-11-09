@@ -200,7 +200,8 @@ namespace TimeMage.Shared
 			}
 			else
 			{
-				Intervals.ForEach(timer => timer.Stop());
+				_isTimerRunning = false;
+				Intervals.ForEach(timer => { timer.Stop(); timer.OnFinished -= Interval_OnFinished; timer.OnSecondElapsed -= Interval_OnSecondElapsed; });
 				Finished(EventArgs.Empty);
 			}
 		}

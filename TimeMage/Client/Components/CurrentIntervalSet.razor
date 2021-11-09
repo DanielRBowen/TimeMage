@@ -154,13 +154,9 @@ else
 
     private void IntervalSet_OnFinished(object sender, EventArgs e)
     {
-        if (IntervalSet.IsTimerRunning)
-        {
-            //playSound = true;
-            Task.Run(async () => await Ding());
-            Task.Run(async () => await StopPlayingTheSoundInAMoment());
-        }
-
+        Task.Run(async () => await Ding());
+        Task.Run(async () => await StopPlayingTheSoundInAMoment());
+        Task.Run(async () => await NoSleep.Disable(JS));
         StateHasChanged();
     }
 
@@ -190,12 +186,16 @@ else
 
     private async Task Ding()
     {
-         _ = await HowlerJsAudioPlayerInterop.Play(JS, 1);
+        _ = await HowlerJsAudioPlayerInterop.Play(JS, 1);
     }
 
     private async Task Close()
     {
-        await Stop();
+        if (IntervalSet.IsTimerRunning)
+        {
+            await Stop();
+        }
+
         await OnClose.InvokeAsync(true);
     }
 
