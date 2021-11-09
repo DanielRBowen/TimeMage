@@ -10,7 +10,14 @@ This project uses [Azure Cognitive Speech Services](https://docs.microsoft.com/e
 which you can see a quick start [here](https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/text-to-speech-basics?tabs=import&pivots=programming-language-csharp).
 
 I stored the subscription key and region of the Azure Cognitive Speech Services as [user-secrets](https://docs.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-6.0&tabs=windows).
-I placed them in appsettings.json when publishing to Azure.
+I placed them in appsettings.json when publishing to Azure. Like this:
+
+```
+ "Speech": {
+    "SubscriptionKey": "[Your Subscription Key]",
+    "Region": "[Your Region]"
+  },
+```
 
 Also, uses [BlazorAudioPlayer](https://github.com/soend/BlazorAudioPlayer)
 You will need to install [node.js](https://nodejs.org/en/download/) and then in a cli (ctrl + ` to open in Visual Studio) navigate to the BlazorAudioPlayer and to run "npm install" before running the TimeMage.Server as startup project.
