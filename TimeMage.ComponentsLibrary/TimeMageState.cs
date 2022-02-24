@@ -3,7 +3,7 @@ using TimeMage.Shared;
 using Blazored.LocalStorage;
 using System.Threading.Tasks;
 
-namespace TimeMage.Client
+namespace TimeMage.ComponentsLibrary
 {
     public class TimeMageState
     {

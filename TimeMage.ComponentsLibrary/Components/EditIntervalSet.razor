@@ -15,7 +15,7 @@ else
 }
 
 <BSModal @ref="_newTimerModal">
-    <BSModalBody Class="container">
+    <Content>
         <form>
             <div class="form-group">
                 <input type="text" class="form-control" aria-label="Name" @bind-value="_newTimer.Name" placeholder="Name" maxlength="34">
@@ -23,10 +23,10 @@ else
 			</div>
 		</form>
 
-	</BSModalBody>
-    <BSModalFooter>
-        <BSButton Color="Color.Light" @onclick="Add">Add</BSButton>
-	</BSModalFooter>
+	</Content>
+    <Footer>
+        <BSButton Color="BSColor.Light" @onclick="Add">Add</BSButton>
+	</Footer>
 </BSModal>
 
 @code {
@@ -48,7 +48,7 @@ else
     public void Add()
     {
         IntervalSet.Intervals.Add(_newTimer);
-        _newTimerModal.Hide();
+        _newTimerModal.HideAsync();
     }
 
     public void Delete(TmTimer interval)
@@ -64,6 +64,6 @@ else
     private void OpenNewTimerModal()
     {
         _newTimer = new TmTimer { Name = "Mountain Climbers", Time = new TimeSpan(0, 0, 10) };
-        _newTimerModal.Show();
+        _newTimerModal.ShowAsync();
     }
 }

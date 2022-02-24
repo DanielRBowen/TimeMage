@@ -6,7 +6,7 @@ using System.Net.Http.Json;
 using System.Threading.Tasks;
 using TimeMage.Shared.Dtos;
 
-namespace TimeMage.Client
+namespace TimeMage.ComponentsLibrary
 {
     public class SpeechToTextClient
     {

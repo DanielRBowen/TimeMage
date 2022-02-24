@@ -1,0 +1,120 @@
+﻿@page "/intervaltimers"
+@inject TimeMageState TimeMageState
+@inject PreloadedIntervalSetsClient PreloadedIntervalSetsClient
+@using System.Text.Json
+
+@if (isEditing)
+{
+    <EditIntervalSet IntervalSet="EditIntervalSet" OnDone="DoneEdit"></EditIntervalSet>
+}
+else if (isCurrentIntervalDisplayed)
+{
+    <CurrentIntervalSet IntervalSet="CurrentIntervalSet" OnClose="CloseCurrent"></CurrentIntervalSet>
+}
+else
+{
+    <button type="button" @onclick="async () => await Add()"><span class="oi oi-plus" aria-hidden="true"></span></button>
+
+    <div class="text-center justify-content-center">
+        @if (IntervalSets.Any())
+        {
+            @foreach (IntervalSet intervalSet in IntervalSets)
+            {
+                <div class="row text-center d-flex justify-content-center my-3">
+                    <h5 class="col-3">@intervalSet.Name</h5>
+                    @if (CurrentIntervalSet == null || CurrentIntervalSet?.IsTimerRunning == false)
+                    {
+                        <div class="col-3">
+                            <button type="button" class="btn btn-outline-success" @onclick="() => { isEditing = !isEditing; EditIntervalSet = intervalSet; }">
+                                <span class="oi oi-pencil" aria-hidden="true"></span>
+                            </button>
+                        </div>
+                    }
+                    <div class="col-3">
+                        <button type="button" class="btn btn-outline-danger" @onclick="async () => await Delete(intervalSet)">
+                            <span class="oi oi-trash" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                    <div class="col-3">
+                        <button type="button" class="btn-outline-primary" @onclick="() => { isCurrentIntervalDisplayed = !isCurrentIntervalDisplayed; CurrentIntervalSet = intervalSet; }">
+                            <span class="oi oi-media-play" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                </div>
+            }
+
+            <DownloadButton Payload="@JsonSerializedIntervalSets" Type="application/json" FileName="IntervalSets.json">Get JSON</DownloadButton>
+        }
+        else
+        {
+            <div>There are no Interval sets</div>
+        }
+    </div>
+}
+
+<div style="width:200px;height:200px;"></div>
+
+@code {
+    bool isEditing = false;
+
+    bool isCurrentIntervalDisplayed = false;
+
+    public List<IntervalSet> IntervalSets => TimeMageState.IntervalSets;
+
+    private IntervalSet EditIntervalSet;
+
+    private IntervalSet CurrentIntervalSet;
+
+    public string JsonSerializedIntervalSets 
+    {
+        get
+        {
+            if (IntervalSets == null || IntervalSets.Any() == false)
+            {
+                return string.Empty;
+            }
+
+            JsonSerializerOptions jsonSerializerOptions = new();
+			jsonSerializerOptions.Converters.Add(new TimeSpanConverter());
+            return JsonSerializer.Serialize(IntervalSets, jsonSerializerOptions);
+        }
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await TimeMageState.LoadAsync();
+        var preloadedIntervalSets = await PreloadedIntervalSetsClient.GetPreloadedIntervalSets();
+
+        foreach (var preloadedIntervalSet in preloadedIntervalSets)
+        {
+            if (preloadedIntervalSet != null && IntervalSets.Any(intervalSet => intervalSet.Name == preloadedIntervalSet.Name) == false)
+            {
+                IntervalSets.Add(preloadedIntervalSet);
+            }
+        }
+    }
+
+    public async Task Add()
+    {
+        IntervalSets.Add(new IntervalSet());
+        await TimeMageState.SaveAsync();
+    }
+
+    public async Task DoneEdit(bool done)
+    {
+        isEditing = !done;
+        await TimeMageState.SaveAsync();
+    }
+
+    public async Task CloseCurrent(bool closed)
+    {
+        isCurrentIntervalDisplayed = !closed;
+        await TimeMageState.SaveAsync();
+    }
+
+    public async Task Delete(IntervalSet intervalSet)
+    {
+        IntervalSets.Remove(intervalSet);
+        await TimeMageState.SaveAsync();
+    }
+}

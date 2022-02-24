@@ -1,0 +1,57 @@
+﻿@page "/timerspage"
+@inject TimeMageState TimeMageState
+
+<button type="button" @onclick="Add"><span class="oi oi-plus" aria-hidden="true"></span></button>
+<button type="button" @onclick="Edit"><span class="oi oi-pencil" aria-hidden="true"></span></button>
+
+<div class="text-center justify-content-center">
+    @if (tmTimers.Any())
+    {
+        foreach (TmTimer timer in tmTimers)
+        {
+            <TimerItem Timer="timer" IsEditing="isEditing" OnDuplicate="Duplicate" OnDelete="Delete"></TimerItem>
+        }
+    }
+    else
+    {
+        <div>There are no timers to display.</div>
+    }
+</div>
+
+@code {
+    bool isEditing = false;
+    List<TmTimer> tmTimers => TimeMageState.Timers;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await TimeMageState.LoadAsync();
+    }
+
+    public async Task Add()
+    {
+        TimeMageState.Timers.Add(new TmTimer());
+        await TimeMageState.SaveAsync();
+    }
+
+    public async Task Delete(TmTimer timerToDelete)
+    {
+        TimeMageState.Timers.Remove(timerToDelete);
+        await TimeMageState.SaveAsync();
+    }
+
+    public async Task Duplicate(TmTimer timerToDuplicate)
+    {
+        TimeMageState.Timers.Add(new TmTimer { Name = timerToDuplicate.Name, Time = timerToDuplicate.Time });
+        await TimeMageState.SaveAsync();
+    }
+
+    public async Task Edit()
+    {
+        isEditing = !isEditing;
+
+        if (isEditing == false)
+        {
+            await TimeMageState.SaveAsync();
+        }
+    }
+}

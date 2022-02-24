@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using TimeMage.ComponentsLibrary;
 
 namespace TimeMage.Client
 {
@@ -26,7 +27,7 @@ namespace TimeMage.Client
 			builder.Services.AddBlazoredLocalStorage(config =>
 				config.JsonSerializerOptions.WriteIndented = true);
 
-			builder.Services.AddBootstrapCss();
+			builder.Services.AddBlazorStrap();
 
 			await builder.Build().RunAsync();
 		}

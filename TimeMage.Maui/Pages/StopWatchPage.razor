@@ -1,0 +1,47 @@
+﻿@page "/stopwatchpage"
+<!--https://medium.com/@@hutohoto/blazor-building-a-timer-and-a-stopwatch-5aea682147aa-->
+<div class="row my-3">
+    <div class="@singleColumnCenter">
+        <button type="button" @onclick="async () => { await TmStopWatch(); }">Start</button>
+    </div>
+</div>
+
+<div class="row my-3">
+    <div class="@singleColumnCenter">
+        <button type="button" @onclick="() => { is_stopwatchrunning = false; }">Pause</button>
+    </div>
+</div>
+<div class="row my-3">
+    <div class="@singleColumnCenter">
+        <button type="button" @onclick="async () => { await TmStopWatch(); }">Resume</button>
+    </div>
+</div>
+<div class="row my-3">
+    <div class="@singleColumnCenter">
+        <button type="button" @onclick="() => { is_stopwatchrunning = false; stopwatchvalue = new TimeSpan(); }">Stop</button>
+    </div>
+</div>
+<div class="row my-3">
+    <div class="@singleColumnCenter">
+        @stopwatchvalue
+    </div>
+</div>
+@code {
+    string singleColumnCenter = "col-12 text-center d-flex justify-content-center";
+    TimeSpan stopwatchvalue = new TimeSpan();
+    bool is_stopwatchrunning = false;
+
+    async Task TmStopWatch()
+    {
+        is_stopwatchrunning = true;
+        while (is_stopwatchrunning)
+        {
+            await Task.Delay(1000);
+            if (is_stopwatchrunning)
+            {
+                stopwatchvalue = stopwatchvalue.Add(new TimeSpan(0, 0, 1));
+                StateHasChanged();
+            }
+        }
+    }
+}

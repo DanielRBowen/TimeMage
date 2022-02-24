@@ -2,10 +2,10 @@
     @if (IsEditing && Timer.IsTimerRunning == false)
     {
         <div class="col-2 mx-2">
-            <button type="button" class="btn btn-outline-success" @onclick="() => OnDuplicate.InvokeAsync(Timer)"><span class="oi oi-document" aria-hidden="true"></span></button>
+            <button type="button" class="btn btn-outline-success" @onclick="(() => OnDuplicate.InvokeAsync(Timer))"><span class="oi oi-document" aria-hidden="true"></span></button>
         </div>
         <div class="col-2 mx-2">
-            <button type="button" class="btn btn-outline-danger" @onclick="() => OnDelete.InvokeAsync(Timer)"><span class="oi oi-trash" aria-hidden="true"></span></button>
+            <button type="button" class="btn btn-outline-danger" @onclick="(() => OnDelete.InvokeAsync(Timer))"><span class="oi oi-trash" aria-hidden="true"></span></button>
         </div>
         <div class="col-6 mx-2" @onclick="EditTimer">
             <div class="row">@Timer.Name</div>
@@ -56,7 +56,7 @@
 </div>
 
 <BSModal @ref="_editTimerModal">
-    <BSModalBody Class="container">
+    <Content>
         <form>
             <div class="form-group">
                 <input type="text" class="form-control" aria-label="Name" @bind-value="Timer.Name" placeholder="Name" maxlength="34">
@@ -64,10 +64,10 @@
 			</div>
 		</form>
 
-	</BSModalBody>
-    <BSModalFooter>
-        <BSButton Color="Color.Light" @onclick="() => _editTimerModal.Hide()">Done</BSButton>
-	</BSModalFooter>
+	</Content>
+    <Footer>
+        <BSButton Color="BSColor.Light" @onclick="_editTimerModal.HideAsync">Done</BSButton>
+	</Footer>
 </BSModal>
 
 @code {
@@ -83,9 +83,9 @@
 
     private BSModal _editTimerModal;
 
-    public void EditTimer()
+    public async Task EditTimer()
     {
-        _editTimerModal.Show();
+        await _editTimerModal.ShowAsync();
     }
 
     protected override void OnInitialized()

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using TimeMage.Shared;
 using TimeMage.Shared.Dtos;
 
-namespace TimeMage.Client
+namespace TimeMage.ComponentsLibrary
 {
 	public class PreloadedIntervalSetsClient
 	{

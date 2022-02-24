@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using TimeMage.Shared;
 
-namespace TimeMage.Client
+namespace TimeMage.ComponentsLibrary
 {
 	public static class PreloadedIntervalSets
 	{
